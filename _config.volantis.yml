@@ -4,7 +4,7 @@ info:
   theme_docs: https://volantis.js.org/ # This is theme's URL.
   theme_repo: https://github.com/volantis-x/hexo-theme-volantis
 # Debug 调试模式
-debug: env # false: 关闭调试模式， env：环境配置检查， pjax：调试pjax，rightMenus: 调试右键
+debug: false # false: 关闭调试模式， env：环境配置检查， pjax：调试pjax，rightMenus: 调试右键
 ############################### 默认占位图 ###############################
 default:
   avatar: volantis-static/media/placeholder/avatar/round/3442075.svg # https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/avatar/round/3442075.svg
@@ -50,20 +50,20 @@ cdn:
   # 以下配置可以覆盖 cdn.prefix,配置项的值可以为空，但是要使用CDN必须依据路径填写配置项的键
   set:
     js:
-    #      app: /js/app.js
+      app: /js/app.js
     css:
-#      style: /css/style.css # (异步加载样式)
+      style: /css/style.css # (异步加载样式)
 # 静态资源版本控制
 # 本地文件使用文件内容的hash值作为版本号(app.8c1e7c88.js)  其他为时间戳 (?time=1648684470140)
 # 建议静态资源设置标头 浏览器缓存一年边缘缓存一个月 cache-control: max-age=86400, s-maxage=31536000 如果有更新记得刷新缓存
 cdn_version: true
 # volantis static 静态资源文件 npm 包 CDN 地址 (后面加 "/" )
 # https://github.com/volantis-x/volantis-static
-volantis_static_cdn: https://unpkg.com/volantis-static@0.0.1654736714924/
+volantis_static_cdn: #https://unpkg.com/volantis-static@0.0.1654736714924/
 ########################################################################
 #  https://web.dev/content-visibility/
 #  https://www.caniuse.com/?search=content-visibility
-content_visibility: true
+content_visibility: false
 
 # 全局页面字符串替换  A => B (可用于临时修改错字等)
 replace:
