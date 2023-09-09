@@ -82,8 +82,8 @@ var RENDERER = {
     },
     bindEvent: function () {
         this.$window.on('resize', this.watchWindowSize);
-        // this.$container.on('mouseenter', this.startEpicenter);
-        // this.$container.on('mousemove', this.moveEpicenter);
+        this.$container.on('mouseenter', this.startEpicenter);
+        this.$container.on('mousemove', this.moveEpicenter);
         // this.$container.on('click', this.reverseVertical);
     },
     getAxis: function (event) {
@@ -348,5 +348,3 @@ function toggle() {
 }
 
 volantis.dark.push(toggle)
-
-console.log(volantis.dark)
