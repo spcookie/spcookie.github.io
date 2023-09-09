@@ -15,7 +15,7 @@ timezone: ''
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://spcookie.github.io
-permalink: :category/:title/ #:year/:month/:day/:title/
+permalink: :title/ #:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -53,9 +53,9 @@ highlight:
 #  hljs: true
 prismjs:
   enable: true
-#  preprocess: false
-#  line_number: true
-#  tab_replace: ''
+  preprocess: false
+  line_number: true
+  tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')

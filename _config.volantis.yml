@@ -715,7 +715,7 @@ plugins:
 
   ######## Plugins to optimize the experience:
   # 代码高亮
-  code_highlight: highlightjs # highlightjs or prismjs
+  code_highlight: prismjs # highlightjs or prismjs
   # highlight.js
   highlightjs:
     copy_code: true
@@ -736,7 +736,7 @@ plugins:
       - https://unpkg.com/prismjs/plugins/autoloader/prism-autoloader.min.js
       - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.min.js
     css:
-      - https://unpkg.com/prismjs/themes/prism.css
+      - https://unpkg.com/prismjs/themes/prism-tomorrow.css
       - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.css
 
   # https://scrollrevealjs.org/api/reveal.html
@@ -768,7 +768,7 @@ plugins:
 
   # Typing Effects
   comment_typing:
-    enable: true
+    enable: false
     js: volantis-static/libs/comment_typing/comment_typing.js # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js
 
   # 视差滚动效果 Slide Background
@@ -1129,7 +1129,7 @@ color_scheme:
     # 网站背景色
     site_bg: '#ffffff' #'#f4f4f4'
     # 网站背景上的文字
-    site_inner: '#fff'
+    site_inner: '#444'
     # 网站页脚文字
     site_footer: '#666'
 

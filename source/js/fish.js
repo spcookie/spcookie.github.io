@@ -142,7 +142,13 @@ var RENDERER = {
         requestAnimationFrame(this.render);
         this.controlStatus();
         this.context.clearRect(0, 0, this.width, this.height);
-        this.context.fillStyle = 'hsl(0,0%,100%)';
+        // this.context.fillStyle = 'hsl(0,0%,100%)';
+
+        if (volantis.dark.mode === 'dark') {
+            RENDERER.context.fillStyle = 'hsl(0,0%,7%)'
+        } else {
+            RENDERER.context.fillStyle = 'hsl(0,0%,100%)';
+        }
 
         for (var i = 0, count = this.fishes.length; i < count; i++) {
             this.fishes[i].render(this.context);
@@ -332,3 +338,15 @@ FISH.prototype = {
 $(function () {
     RENDERER.init();
 });
+
+function toggle() {
+    if (volantis.dark.mode === 'dark') {
+        RENDERER.context.fillStyle = 'hsl(0,0%,7%)'
+    } else {
+        RENDERER.context.fillStyle = 'hsl(0,0%,100%)';
+    }
+}
+
+volantis.dark.push(toggle)
+
+console.log(volantis.dark)
