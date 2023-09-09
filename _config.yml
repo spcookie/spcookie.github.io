@@ -4,8 +4,8 @@
 
 # Site
 title: "Spcookie'blog"
-favicon: /source/image/log/png
-subtitle: "未老已衰之石，未冷已冻之水，未生已死之身，未灼已化之魂。 --镇魂"
+favicon: /image/logo.png
+subtitle: "未老已衰之石，未冷已冻之水，未生已死之身，未灼已化之魂。"
 description: "记录学习，分享知识"
 keywords: "学习，分享，整理，搜集"
 author: "Liu WeiXiang"
@@ -15,7 +15,7 @@ timezone: ''
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://spcookie.github.io
-permalink: :year/:month/:day/:title/
+permalink: :category/:title/ #:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -113,3 +113,18 @@ jsonContent:
   meta: true
   keywords: french
   dateFormat: YYYY-MM-DD
+
+# Rss
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:

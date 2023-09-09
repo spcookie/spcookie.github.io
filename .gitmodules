@@ -1,0 +1,3 @@
+[submodule "themes/volantis"]
+	path = themes/volantis
+	url = git@github.com:spcookie/hexo-theme-volantis.git

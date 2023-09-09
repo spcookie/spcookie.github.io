@@ -1449,6 +1449,14 @@
   dependencies:
     "hexo-pagination" "3.0.0"
 
+"hexo-generator-feed@^3.0.0":
+  "integrity" "sha512-Jo35VSRSNeMitS2JmjCq3OHAXXYU4+JIODujHtubdG/NRj2++b3Tgyz9pwTmROx6Yxr2php/hC8og5AGZHh8UQ=="
+  "resolved" "https://registry.npmmirror.com/hexo-generator-feed/-/hexo-generator-feed-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "hexo-util" "^2.1.0"
+    "nunjucks" "^3.0.0"
+
 "hexo-generator-index@^3.0.0":
   "integrity" "sha512-83AuNN4cWdLVi//3ugR8E3kR6rrOwhXZt+hOCm1IjtIGj353/GlrtpMHpqZHU5kqipzj4miy9dweVdukXglVWw=="
   "resolved" "https://registry.npmmirror.com/hexo-generator-index/-/hexo-generator-index-3.0.0.tgz"
@@ -1559,12 +1567,7 @@
     "picocolors" "^1.0.0"
     "serve-static" "^1.14.1"
 
-"hexo-theme-volantis@^5.8.0":
-  "integrity" "sha512-Ap8xHssnfEj6eNIoGMVJNiGUza0azPlXcnMaoVa+N69981W9VQ4QSWiylw4kyhE7uu21nCUWxFH7RptyLzDxkw=="
-  "resolved" "https://registry.npmmirror.com/hexo-theme-volantis/-/hexo-theme-volantis-5.8.0.tgz"
-  "version" "5.8.0"
-
-"hexo-util@^2.0.0", "hexo-util@^2.5.0", "hexo-util@^2.7.0", "hexo-util@latest":
+"hexo-util@^2.0.0", "hexo-util@^2.1.0", "hexo-util@^2.5.0", "hexo-util@^2.7.0", "hexo-util@latest":
   "integrity" "sha512-hQM3h34nhDg0bSe/Tg1lnpODvNkz7h2u0+lZGzlKL0Oufp+5KCAEUX9wal7/xC7ax3/cwEn8IuoU75kNpZLpJQ=="
   "resolved" "https://registry.npmmirror.com/hexo-util/-/hexo-util-2.7.0.tgz"
   "version" "2.7.0"
@@ -2452,7 +2455,7 @@
   dependencies:
     "boolbase" "^1.0.0"
 
-"nunjucks@^3.2.3":
+"nunjucks@^3.0.0", "nunjucks@^3.2.3":
   "integrity" "sha512-26XRV6BhkgK0VOxfbU5cQI+ICFUtMLixv1noZn1tGU38kQH5A5nmmbk/O45xdyBhD1esk47nKrY0mvQpZIhRjQ=="
   "resolved" "https://registry.npmmirror.com/nunjucks/-/nunjucks-3.2.4.tgz"
   "version" "3.2.4"

@@ -507,7 +507,7 @@ sidebar:
       shape: circle # circle, rectangle
       url: /
       title: Spcookie
-      subtitle: ===
+      subtitle: ٩(•̤̀ᵕ•̤́๑)
       jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
         - icon: fa-solid fa-rss
@@ -636,7 +636,7 @@ tag_plugins:
 ############################### Site Footer ############################### > start
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [license, copyright]
+  layout: [ foot, copyright ]
   social:
     - icon: fa-solid fa-rss
       url:
@@ -653,9 +653,10 @@ site_footer:
     <span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
     <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
   # site copyright
-  copyright: '[Copyright © since 2017 Spc.](/)'
+  copyright: 'Copyright 2023 <i class="fas fa-heartbeat animated faa-vertical" style="color:#f66"></i> Spcookie.' #'[Copyright © since 2017 Spc.](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
+  foot: '<p>Modify from <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis">Volantis</a> theme <i class="fa-solid fa-bolt fa-bounce light-blue"></i> Powered by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a></p>'
 ############################### Site Footer ############################### > end
 
 ############################### Plugins ############################### > start
@@ -714,14 +715,14 @@ plugins:
 
   ######## Plugins to optimize the experience:
   # 代码高亮
-  code_highlight: prismjs # highlightjs or prismjs
+  code_highlight: highlightjs # highlightjs or prismjs
   # highlight.js
   highlightjs:
     copy_code: true
     # 如果开启以下配置, hexo.config.highlight.enable 需要设置为 false ; hexo.config.highlight.enable 设置为 true, 则以下配置无效
     # # 不再支持 v11.1.0 以下版本
-#    js: https://unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js # Please set hexo.config.highlight.enable = false !!!
-#    css: https://unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/github.min.css #default.min.css
+    js: https://unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js # Please set hexo.config.highlight.enable = false !!!
+    css: https://unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/github.min.css #default.min.css
     # # # more: https://www.jsdelivr.com/package/npm/@highlightjs/cdn-assets?path=styles
 
   # prismjs
@@ -774,12 +775,13 @@ plugins:
   parallax:
     enable: false
     position: cover       # cover: sticky on the cover.   fixed: Fixed as background for the site.
-    shuffle: true         # shuffle playlist
+    shuffle: false         # shuffle playlist
     duration: 10000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
-    images:               # For personal use only. At your own risk if used for commercial purposes !!!
-      - volantis-static/media/wallpaper/minimalist/2020/001.webp
-      # - volantis-static/media/wallpaper/minimalist/2020/002.webp
+    images: # For personal use only. At your own risk if used for commercial purposes !!!
+      - /image/index_bg.jpg
+      #      - volantis-static/media/wallpaper/minimalist/2020/001.webp
+      #       - volantis-static/media/wallpaper/minimalist/2020/002.webp
       # - volantis-static/media/wallpaper/minimalist/2020/003.webp
       # - volantis-static/media/wallpaper/minimalist/2020/004.webp
       # - volantis-static/media/wallpaper/minimalist/2020/005.webp
@@ -829,12 +831,12 @@ plugins:
     enable: true
     cover: true          # 封面是否pjax处理 false：每次切换页面封面都重载，适合封面较少的情况 true：封面经过Pjax处理，适合封面较多的情况
     timeout: 5000        # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
-    cacheBust: false     # When set to true, Pjax appends a timestamp  to skip the browser cache.
-    animation: false # false, nprogress, circle
+    cacheBust: true     # When set to true, Pjax appends a timestamp  to skip the browser cache.
+    animation: nprogress # false, nprogress, circle
     nprogress: volantis-static/libs/nprogress/nprogress.js # https://unpkg.com/nprogress@0.2.0/nprogress.min.js
     banUrl:              # 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
-      # - '/artitalk/'   # artitalk 不支持 pjax
-      # - '/bbtalk/'     # bbtalk 不支持 pjax
+    # - '/artitalk/'   # artitalk 不支持 pjax
+    # - '/bbtalk/'     # bbtalk 不支持 pjax
 
   # 暗黑模式 darkmode
   # 开关按钮：在 navbar.menu 中添加：
@@ -919,7 +921,7 @@ plugins:
     backgroundColor: 'var(--color-card)' # 默认背景色
     zindex: 2147483647                   # 层级
     copyright:                           # 是否在复制时弹出版权提示，影响范围：ctrl+c、代码块复制按钮、右键复制选项
-      enable: false
+      enable: true
       title: '知识共享许可协议'
       message: '请遵守 CC BY-NC-SA 4.0 协议。'
       icon: 'far fa-copyright light-blue'
