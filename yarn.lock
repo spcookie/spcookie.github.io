@@ -2104,6 +2104,13 @@
   dependencies:
     "mimic-response" "^3.1.0"
 
+"deep-assign@^2.0.0":
+  "integrity" "sha512-2QhG3Kxulu4XIF3WL5C5x0sc/S17JLgm1SfvDfIRsR/5m7ZGmcejII7fZ2RyWhN0UWIJm0TNM/eKow6LAn3evQ=="
+  "resolved" "https://registry.npmmirror.com/deep-assign/-/deep-assign-2.0.0.tgz"
+  "version" "2.0.0"
+  dependencies:
+    "is-obj" "^1.0.0"
+
 "deepmerge@^4.2.2":
   "integrity" "sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A=="
   "resolved" "https://registry.npmmirror.com/deepmerge/-/deepmerge-4.3.1.tgz"
@@ -3007,6 +3014,13 @@
     "nunjucks" "^3.2.3"
     "picocolors" "^1.0.0"
 
+"hexo-filter-mermaid-diagrams@^1.0.5":
+  "integrity" "sha512-/IkIMKn4V7PBAzMJGNDPSoBFlv1JGvIELXm5AWkR8N5N44kDTNJLtabb4h095UhZQIXOrF9zA1WYhi6wrWLW5Q=="
+  "resolved" "https://registry.npmmirror.com/hexo-filter-mermaid-diagrams/-/hexo-filter-mermaid-diagrams-1.0.5.tgz"
+  "version" "1.0.5"
+  dependencies:
+    "deep-assign" "^2.0.0"
+
 "hexo-front-matter@^3.0.0":
   "integrity" "sha512-hSQTPUmB/BCe1BFYmXRkPyLk8rqbBqHCQq+rjwwOJuEfOADrFaVK2VPZb90tJzPyXE1xSxpgCxE/AZq0CyTVwg=="
   "resolved" "https://registry.npmmirror.com/hexo-front-matter/-/hexo-front-matter-3.0.0.tgz"
@@ -3645,7 +3659,7 @@
   "resolved" "https://registry.npmmirror.com/is-number/-/is-number-7.0.0.tgz"
   "version" "7.0.0"
 
-"is-obj@^1.0.1":
+"is-obj@^1.0.0", "is-obj@^1.0.1":
   "integrity" "sha512-l4RyHgRqGN4Y3+9JHVrNqO+tN0rV5My76uW5/nuO4K1b6vw5G8d/cmFjP9tRfEsdhZNt0IFdZuK/c2Vr4Nb+Qg=="
   "resolved" "https://registry.npmmirror.com/is-obj/-/is-obj-1.0.1.tgz"
   "version" "1.0.1"
