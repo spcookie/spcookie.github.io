@@ -3021,6 +3021,11 @@
   dependencies:
     "deep-assign" "^2.0.0"
 
+"hexo-filter-plantuml@^2.1.1":
+  "integrity" "sha512-MUBbuDyPiq1cN1rJffe9izZqWAHpAGVW25CGe4WHqjD4IkdcNjhrk9l7WTej9IGQCO132UJeTkOqreHanKdQag=="
+  "resolved" "https://registry.npmmirror.com/hexo-filter-plantuml/-/hexo-filter-plantuml-2.1.1.tgz"
+  "version" "2.1.1"
+
 "hexo-front-matter@^3.0.0":
   "integrity" "sha512-hSQTPUmB/BCe1BFYmXRkPyLk8rqbBqHCQq+rjwwOJuEfOADrFaVK2VPZb90tJzPyXE1xSxpgCxE/AZq0CyTVwg=="
   "resolved" "https://registry.npmmirror.com/hexo-front-matter/-/hexo-front-matter-3.0.0.tgz"
