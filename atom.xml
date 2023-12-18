@@ -6,7 +6,7 @@
   <link href="https://spcookie.github.io/atom.xml" rel="self"/>
   
   <link href="https://spcookie.github.io/"/>
-  <updated>2023-12-18T03:27:26.378Z</updated>
+  <updated>2023-12-18T03:51:47.360Z</updated>
   <id>https://spcookie.github.io/</id>
   
   <author>
@@ -21,27 +21,10 @@
     <link href="https://spcookie.github.io/git-commit-emoji/"/>
     <id>https://spcookie.github.io/git-commit-emoji/</id>
     <published>2023-12-18T03:02:37.894Z</published>
-    <updated>2023-12-18T03:27:26.378Z</updated>
+    <updated>2023-12-18T03:51:47.360Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;emoji&lt;/th&gt;
-&lt;th&gt;emoji代码&lt;/th&gt;
-&lt;th&gt;commit说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;🎨</summary>
-        
-      
+    <summary type="html">&lt;p&gt;GitHub上有一套约定俗成的emoji使用规范，在使用git提交信息的时候，使用它们让提交信息更加明晰和生动。&lt;/p&gt;</summary>
     
     
     
@@ -49,32 +32,6 @@
     
     
     <category term="git" scheme="https://spcookie.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MinIO学习笔记</title>
-    <link href="https://spcookie.github.io/minio-learning-notes/"/>
-    <id>https://spcookie.github.io/minio-learning-notes/</id>
-    <published>2023-12-18T02:50:23.926Z</published>
-    <updated>2023-12-18T02:50:23.926Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;MinIO学习笔记&quot;&gt;&lt;a href=&quot;#MinIO学习笔记&quot; class=&quot;headerlink&quot; title=&quot;MinIO学习笔记&quot;&gt;&lt;/a&gt;MinIO学习笔记&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;👉&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="中间件" scheme="https://spcookie.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
-    
-    
-    <category term="storage" scheme="https://spcookie.github.io/tags/storage/"/>
     
   </entry>
   
@@ -107,6 +64,51 @@
   </entry>
   
   <entry>
+    <title>MinIO学习笔记</title>
+    <link href="https://spcookie.github.io/minio-learning-notes/"/>
+    <id>https://spcookie.github.io/minio-learning-notes/</id>
+    <published>2023-12-18T02:50:23.926Z</published>
+    <updated>2023-12-18T02:50:23.926Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;MinIO学习笔记&quot;&gt;&lt;a href=&quot;#MinIO学习笔记&quot; class=&quot;headerlink&quot; title=&quot;MinIO学习笔记&quot;&gt;&lt;/a&gt;MinIO学习笔记&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;👉&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="中间件" scheme="https://spcookie.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    
+    <category term="storage" scheme="https://spcookie.github.io/tags/storage/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>🌟如何拥有自己的ChatGPT</title>
+    <link href="https://spcookie.github.io/obtain-ChatGPT/"/>
+    <id>https://spcookie.github.io/obtain-ChatGPT/</id>
+    <published>2023-12-18T02:50:23.926Z</published>
+    <updated>2023-12-18T02:50:23.926Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;魔法上网 👉 Github 👉 Vercel&lt;br&gt;简单小教程，5分钟部署一个属于自己的ChatGPT&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="教程" scheme="https://spcookie.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="technology" scheme="https://spcookie.github.io/tags/technology/"/>
+    
+  </entry>
+  
+  <entry>
     <title>了解Gradle kotlin DSL</title>
     <link href="https://spcookie.github.io/understanding-gradle-kotlin-dsl/"/>
     <id>https://spcookie.github.io/understanding-gradle-kotlin-dsl/</id>
@@ -130,25 +132,6 @@
     <category term="gradle" scheme="https://spcookie.github.io/tags/gradle/"/>
     
     <category term="kotlin" scheme="https://spcookie.github.io/tags/kotlin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>🌟如何拥有自己的ChatGPT</title>
-    <link href="https://spcookie.github.io/obtain-ChatGPT/"/>
-    <id>https://spcookie.github.io/obtain-ChatGPT/</id>
-    <published>2023-12-18T02:50:23.926Z</published>
-    <updated>2023-12-18T02:50:23.926Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;魔法上网 👉 Github 👉 Vercel&lt;br&gt;简单小教程，5分钟部署一个属于自己的ChatGPT&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="教程" scheme="https://spcookie.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="technology" scheme="https://spcookie.github.io/tags/technology/"/>
     
   </entry>
   
