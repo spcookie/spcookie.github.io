@@ -1,0 +1,13 @@
+.fish-cover-bg {
+    width: 100%;
+    position: absolute;
+    bottom: -6%;
+    left: 0;
+}
+
+.fish-parallax {
+    width: 100%;
+    position: absolute;
+    bottom: -4%;
+    left: 0;
+}
