@@ -6,6 +6,8 @@ keywords:
 description: 
 author: Spcookie
 group: default
+date:
+updated:
 comments: false
 readmore: false
 excerpt: 
