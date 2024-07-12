@@ -48,6 +48,28 @@ kube-controller-manager 中包含的控制器有：
 - 端点（Endpoints）控制器：负责为端点对象（Endpoints Object，连接 Service 和 Pod）赋值
 - Service Account & Token控制器： 负责为新的名称空间创建 default Service Account 以及 API Access Token
 
+### cloud-controller-manager
+
+cloud-controller-manager 中运行了与具体云基础设施供应商互动的控制器。cloud-controller-manager 只运行特定于云基础设施供应商的控制器。
+
+cloud-controller-manager 使得云供应商的代码和 Kubernetes 的代码可以各自独立的演化。在此之前的版本中，Kubernetes的核心代码是依赖于云供应商的代码的。在后续的版本中，特定于云供应商的代码将由云供应商自行维护，并在运行Kubernetes时链接到 cloud-controller-manager。
+
+以下控制器中包含与云供应商相关的依赖：
+
+- 节点控制器：当某一个节点停止响应时，调用云供应商的接口，以检查该节点的虚拟机是否已经被云供应商删除
+> 私有化部署Kubernetes时，我们不知道节点的操作系统是否删除，所以在移除节点后，要自行通过 kubectl delete node 将节点对象从 Kubernetes 中删除
+
+- 路由控制器：在云供应商的基础设施中设定网络路由
+> 私有化部署Kubernetes时，需要自行规划Kubernetes的拓扑结构，并做好路由配置
+
+- 服务（Service）控制器：创建、更新、删除云供应商提供的负载均衡器
+> 私有化部署Kubernetes时，不支持 LoadBalancer 类型的 Service，如需要此特性，需要创建 NodePort 类型的 Service，并自行配置负载均衡器
+
+- 数据卷（Volume）控制器：创建、绑定、挂载数据卷，并协调云供应商编排数据卷
+> 私有化部署Kubernetes时，需要自行创建和管理存储资源，并通过Kubernetes的存储类、存储卷、数据卷等与之关联
+
+通过 cloud-controller-manager，Kubernetes可以更好地与云供应商结合，例如，在阿里云的 Kubernetes 服务里，您可以在云控制台界面上轻松点击鼠标，即可完成 Kubernetes 集群的创建和管理。在私有化部署环境时，您必须自行处理更多的内容。
+
 ## Node组件
 
 > Node 组件运行在每一个节点上（包括 master 节点和 worker 节点），负责维护运行中的 Pod 并提供 Kubernetes 运行时环境。
@@ -141,9 +163,50 @@ kubectl get nodes -o wide
 kubectl describe node <your-node-name>
 ```
 
+### Addresses
 
+依据集群部署的方式（在哪个云供应商部署，或是在物理机上部署），Addesses 字段可能有所不同。
+
+- HostName： 在节点命令行界面上执行 `hostname` 命令所获得的值。启动 kubelet 时，可以通过参数 `--hostname-override` 覆盖
+- ExternalIP：通常是节点的外部IP（可以从集群外访问的内网IP地址）
+- InternalIP：通常是从节点内部可以访问的 IP 地址
+
+### Conditions
+
+Conditions 描述了节点的状态。Condition的例子有：
+|Node Condition|描述|
+|---|---|
+|OutOfDisk|如果节点上的空白磁盘空间不够，不能够再添加新的节点时，该字段为 `True`，其他情况为 `False`|
+|Ready|如果节点是健康的且已经就绪可以接受新的 Pod。则节点Ready字段为 `True`。`False` 表明了该节点不健康，不能够接受新的 Pod|
+|MemoryPressure|如果节点内存紧张，则该字段为 `True`，否则为 `False`|
+|PIDPressure|如果节点上进程过多，则该字段为 `True`，否则为 `False`|
+|DiskPressure|如果节点磁盘空间紧张，则该字段为 `True`，否则为 `False`|
+|NetworkUnvailable|如果节点的网络配置有问题，则该字段为 `True`，否则为 `False`|
+
+### Capacity and Allocatable
+
+容量和可分配量（Capacity and Allocatable）描述了节点上的可用资源的情况：
+
+- CPU
+- 内存
+- 该节点可调度的最大 pod 数量
+
+Capacity 中的字段表示节点上的资源总数，Allocatable 中的字段表示该节点上可分配给普通 Pod 的资源总数。
+
+### Info
+
+描述了节点的基本信息，例如：
+
+- Linux 内核版本
+- Kubernetes 版本（kubelet 和 kube-proxy 的版本）
+- Docker 版本
+- 操作系统名称
+
+这些信息由节点上的 kubelet 收集。
 
 # k8s Deployment
+
+## Deployment概述
 
 在 k8s 上进行部署前，首先需要了解一个基本概念 Deployment
 
@@ -186,6 +249,54 @@ spec:	        #这是关于该Deployment的描述，可以理解为你期待该D
 ```
 
 2. 应用 YAML 文件
+
+```sh
+kubectl apply -f nginx-deployment.yaml
+```
+
+## 伸缩应用程序
+
+### Scaling 概述
+
+下图中，Service A 只将访问流量转发到 IP 为 10.0.0.5 的Pod上。
+
+{% image ./k8s-scaling1.svg::width=480px %}
+
+修改了 Deployment 的 replicas 为 4 后，Kubernetes 又为该 Deployment 创建了 3 新的 Pod，这 4 个 Pod 有相同的标签。因此Service A通过标签选择器与新的 Pod 建立了对应关系，将访问流量通过负载均衡在 4 个 Pod 之间进行转发。
+
+{% image ./k8s-scaling2.svg::width=480px %}
+
+> 通过更改部署中的 replicas（副本数）来完成扩展
+
+### 将 Nginx Deployment 扩容
+
+1. 修改 `nginx-deployment.yaml` 文件
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+```
+
+2. 执行命令
 
 ```sh
 kubectl apply -f nginx-deployment.yaml
@@ -289,50 +400,3 @@ spec:	    #这是关于该 Service 的定义，描述了 Service 如何选择 Po
 kubectl apply -f nginx-service.yaml
 ```
 
-# 伸缩应用程序
-
-## Scaling 概述
-
-下图中，Service A 只将访问流量转发到 IP 为 10.0.0.5 的Pod上。
-
-{% image ./k8s-scaling1.svg::width=480px %}
-
-修改了 Deployment 的 replicas 为 4 后，Kubernetes 又为该 Deployment 创建了 3 新的 Pod，这 4 个 Pod 有相同的标签。因此Service A通过标签选择器与新的 Pod 建立了对应关系，将访问流量通过负载均衡在 4 个 Pod 之间进行转发。
-
-{% image ./k8s-scaling2.svg::width=480px %}
-
-> 通过更改部署中的 replicas（副本数）来完成扩展
-
-## 将 Nginx Deployment 扩容
-
-1. 修改 `nginx-deployment.yaml` 文件
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
-spec:
-  replicas: 4
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.7.9
-        ports:
-        - containerPort: 80
-```
-
-2. 执行命令
-
-```sh
-kubectl apply -f nginx-deployment.yaml
-```
