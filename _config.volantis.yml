@@ -42,7 +42,7 @@ csp:
 # 默认使用 https://unpkg.com/hexo-theme-volantis@<%- theme.info.theme_version %>/source/js/*.js ，注意版本号对应关系！！可以通过修改以下配置项覆盖
 # 开发者注意 cdn.enable 设置为 false
 cdn:
-  enable: false
+  enable: true
   # CDN 前缀，为空使用默认值，链接最后不加 "/",
   # 例如： https://cdn.jsdelivr.net/gh/volantis-x/volantis-x.github.io@gh-page 填写最后编译生成的源码CDN地址前缀，此路径下应该含有/js与/css目录,
   # 该配置默认值是："https://unpkg.com/hexo-theme-volantis@"+ theme.info.theme_version +"/source"
@@ -190,9 +190,9 @@ article:
     # 文章页脚组件
     footer_widget:
       # ----------------
-      # 参考资料、相关资料等 (for layout: post/docs)
+      # 参考资料、相关资料等 (for layout: postg/docs)
       references:
-        title: 参考资料
+        title: 引用文章
         icon: fa-solid fa-quote-left
         # 在 front-matter 中:
         #   references:
@@ -280,9 +280,9 @@ article:
       category:
         icon: fa-solid fa-folder-open SUNFLOWER
       # 文章浏览计数
-      # counter:
-      #   icon: fa-solid fa-eye
-      #   unit: '次浏览'
+      counter:
+        icon: fa-solid fa-eye
+        unit: '次浏览'
       # waline 文章评论数量
       # walinecount:
       #   icon: fa-solid fa-comment-dots
@@ -317,7 +317,7 @@ article:
 comments:
   title: <i class='fa-solid fa-comments'></i> 评论
   subtitle:
-  service: 
+  service: giscus
   # 可选评论系统 #
 
   # artalk
@@ -348,14 +348,16 @@ comments:
   # https://github.com/laymonage/giscus
   giscus:
     # 以下配置按照 yml 格式增删填写即可
-    # repo: xxx/xxx
-    # repo-id: xxx
-    # category: xxx
-    # category-id: xxx
-    # mapping: "pathname"
-    # reactions-enabled: "1"
+    repo: "spcookie/spcookie.github.io"
+    repo-id: "R_kgDOKREqcg"
+    category: Comment
+    category-id: "DIC_kwDOKREqcs4CgvK2"
+    mapping: "pathname"
+    reactions-enabled: "1"
     # emit-metadata: "0"
-    # lang: "zh-CN"
+    input-position: "top"
+    loading: "lazy"
+    lang: "zh-CN"
     # 以上配置按照 yml 格式增删填写即可
     theme:
       light: "light" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
@@ -495,7 +497,7 @@ sidebar:
   # 主页、分类、归档等独立页面
   for_page: []
   # layout: docs/post 这类文章页面
-  for_post: [blogger, toc, lastupdate, category, tagcloud]
+  for_post: [toc, blogger, category, tagcloud, webinfo]
   # 侧边栏组件库
   widget_library:
     # ---------------------------------------
@@ -526,21 +528,21 @@ sidebar:
       sticky: true
       header:
         icon: fa-solid fa-list
-        title: 本文目录
+        title: 目录
       list_number: true
-      min_depth: 2
-      max_depth: 5
+      min_depth: 1
+      max_depth: 6
     # ---------------------------------------
     # music
     music:
       class: music
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [] # [desktop, mobile]
       pjaxReload: false
     # ---------------------------------------
     # category widget
     category:
       class: category
-      display: [desktop] # [desktop, mobile]
+      display: [desktop, mobile] # [desktop, mobile]
       header:
         icon: fa-solid fa-folder-open SUNFLOWER
         title: 分类
@@ -563,7 +565,7 @@ sidebar:
     # qrcode widget
     qrcode:
       class: qrcode
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [] # [desktop, mobile]
       height: 64px  # Automatic height if not set
       images:
         - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
@@ -583,7 +585,7 @@ sidebar:
           unit: '篇'
         runtime:
           enable: true
-          data: '2020/01/01'    # 填写建站日期
+          data: '2023/10/08'    # 填写建站日期
           text: '已运行时间：'
           unit: '天'
         wordcount:
@@ -768,7 +770,7 @@ plugins:
 
   # Typing Effects
   comment_typing:
-    enable: false
+    enable: true
     js: volantis-static/libs/comment_typing/comment_typing.js # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js
 
   # 视差滚动效果 Slide Background
@@ -1127,7 +1129,7 @@ color_scheme:
   # 亮色主题（默认）
   light:
     # 网站背景色
-    site_bg: '#ffffff' #'#f4f4f4'
+    site_bg: '#f4f4f4' #'#f4f4f4'
     # 网站背景上的文字
     site_inner: '#444'
     # 网站页脚文字

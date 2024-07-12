@@ -8,7 +8,7 @@ favicon: /image/logo.png
 subtitle: "未老已衰之石，未冷已冻之水，未生已死之身，未灼已化之魂。"
 description: "记录学习，分享知识"
 keywords: "学习，分享，整理，搜集"
-author: "Liu WeiXiang"
+author: "Spcookie"
 language: zh-CN
 timezone: ''
 
@@ -41,19 +41,19 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: false
-#  line_number: true
-#  auto_detect: true
-#  tab_replace: ''
-#  wrap: true
-#  hljs: true
+ enable: false
+ line_number: true
+ auto_detect: true
+ tab_replace: ''
+ wrap: true
+ hljs: true
 prismjs:
   enable: true
-  preprocess: false
+  preprocess: true
   line_number: true
   tab_replace: ''
 
