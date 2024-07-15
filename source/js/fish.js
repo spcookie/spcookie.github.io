@@ -147,7 +147,7 @@ var RENDERER = {
         if (volantis.dark.mode === 'dark') {
             RENDERER.context.fillStyle = 'hsl(0,0%,7%)'
         } else {
-            RENDERER.context.fillStyle = 'hsl(0,0%,100%)';
+            RENDERER.context.fillStyle = '#f4f4f4';
         }
 
         for (var i = 0, count = this.fishes.length; i < count; i++) {
@@ -343,7 +343,7 @@ function toggle() {
     if (volantis.dark.mode === 'dark') {
         RENDERER.context.fillStyle = 'hsl(0,0%,7%)'
     } else {
-        RENDERER.context.fillStyle = 'hsl(0,0%,100%)';
+        RENDERER.context.fillStyle = '#f4f4f4';
     }
 }
 

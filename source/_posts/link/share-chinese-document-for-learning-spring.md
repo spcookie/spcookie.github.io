@@ -1,6 +1,6 @@
 ---
 title: 分享一个学习Spring的中文文档
-categories: [ 框架 ]
+categories: [ 链接 ]
 tags: [ spring, java ]
 comments: false
 keywords:

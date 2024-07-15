@@ -1,6 +1,6 @@
 ---
 title: 了解Gradle kotlin DSL
-categories: [ 工具 ]
+categories: [ 笔记 ]
 tags: [ gradle, kotlin ]
 comments: false
 keywords:

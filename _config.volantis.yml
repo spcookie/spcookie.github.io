@@ -497,7 +497,7 @@ sidebar:
   # 主页、分类、归档等独立页面
   for_page: []
   # layout: docs/post 这类文章页面
-  for_post: [toc, blogger, category, tagcloud, webinfo]
+  for_post: [blogger, toc, category, tagcloud, webinfo]
   # 侧边栏组件库
   widget_library:
     # ---------------------------------------
@@ -530,7 +530,7 @@ sidebar:
         icon: fa-solid fa-list
         title: 目录
       list_number: true
-      min_depth: 1
+      min_depth: 2
       max_depth: 6
     # ---------------------------------------
     # music
@@ -543,6 +543,7 @@ sidebar:
     category:
       class: category
       display: [desktop, mobile] # [desktop, mobile]
+      sticky: true
       header:
         icon: fa-solid fa-folder-open SUNFLOWER
         title: 分类
@@ -552,6 +553,7 @@ sidebar:
     tagcloud:
       class: tagcloud
       display: [desktop, mobile] # [desktop, mobile]
+      sticky: true
       header:
         icon: fa-solid fa-tags GREENSEA
         title: 标签
@@ -575,6 +577,7 @@ sidebar:
     webinfo:
       class: webinfo
       display: [desktop]
+      sticky: true
       header:
         icon: fa-solid fa-award
         title: 站点信息
@@ -1238,7 +1241,7 @@ custom_css:
     effect: [] # [shadow, floatable, blur]
     highlight:
       language: true # show language of codeblock
-      grayscale: false # Enable grayscale effect
+      grayscale: true # Enable grayscale effect
     text_align: # left, right, justify, center
       h1: left
       h2: left
@@ -1250,7 +1253,7 @@ custom_css:
     h3: 24px # Spacing above H3 (only px unit)
     h4: 16px # Spacing above H4 (only px unit)
     p: 1em # Paragraph spacing between paragraphs
-    line_height: 1.6 # normal, 1.5, 1.75, 2 ...
+    line_height: 1.5 # normal, 1.5, 1.75, 2 ...
   border_radius:
     card: 8px
     codeblock: 4px
@@ -1293,7 +1296,7 @@ custom_css:
 ############################### Analytics ############################### > start
 analytics:
   busuanzi: #volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js #https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
-    enable: false
+    enable: true
   leancloud: # 请使用自己的 id & key 以防止数据丢失
     app_id: # u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
     app_key: # jfHtEKVE24j0IVCGHbvuFClp

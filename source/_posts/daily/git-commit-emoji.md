@@ -1,6 +1,6 @@
 ---
 title: Git提交的emoji表情使用指南
-categories: [ 工具 ]
+categories: [ 日常 ]
 tags: [ git ]
 author: Spcookie
 group: default

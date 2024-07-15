@@ -1,7 +1,7 @@
 ---
 title: 🌟如何拥有自己的ChatGPT
-categories: [ 教程 ]
-tags: [ technology ]
+categories: [ 日常 ]
+tags: [ ai, gpt ]
 comments: false
 keywords:
 description:
