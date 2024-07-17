@@ -1,6 +1,6 @@
 ---
 title: MinIO学习笔记
-categories: [ 中间件 ]
+categories: [ 笔记 ]
 tags: [ storage ]
 comments: false
 keywords:
