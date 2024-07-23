@@ -1,6 +1,6 @@
 ---
 title: 🌟如何拥有自己的ChatGPT
-categories: [ 日常 ]
+categories: [ 日常随写 ]
 tags: [ ai, gpt ]
 comments: false
 keywords:

@@ -1,6 +1,6 @@
 ---
 title: MinIO学习笔记
-categories: [ 笔记 ]
+categories: [ 开发笔记 ]
 tags: [ storage ]
 comments: false
 keywords:

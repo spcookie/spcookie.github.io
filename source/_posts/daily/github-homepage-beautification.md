@@ -1,6 +1,6 @@
 ---
 title: GitHub主页美化？
-categories: [ 日常 ]
+categories: [ 日常随写 ]
 tags: [ github ]
 comments: false
 keywords:

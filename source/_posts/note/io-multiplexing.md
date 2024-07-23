@@ -1,6 +1,6 @@
 ---
 title: IO多路复用-select、poll、epoll机制与区别
-categories: [ 笔记 ]
+categories: [ 开发笔记 ]
 tags: [ kernel ]
 comments: false
 keywords:
