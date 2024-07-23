@@ -38,7 +38,7 @@ OAuth在"客户端"与"服务提供商"之间，设置了一个授权层（autho
 
 ## 运行流程
 
-OAuth 2.0的运行流程如下图，摘自RFC 6749。
+OAuth 2.0的运行流程如下图，摘自[RFC 6749](http://www.rfcreader.com/#rfc6749)。
 
 {% image ./oauth2.png %}
 
