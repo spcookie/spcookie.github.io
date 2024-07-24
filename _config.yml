@@ -104,7 +104,7 @@ theme: volantis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/spcookie/spcookie.github.io #https://github.com/hexojs/hexojs.github.io
+  repo: https://gitee.com/spcookie/spcookie.git #https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
 #  message: [message]
 
