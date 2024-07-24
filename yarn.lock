@@ -1603,18 +1603,6 @@
     "resolve" "^1.20.0"
     "tildify" "^2.0.0"
 
-"hexo-deployer-git@^4.0.0":
-  "integrity" "sha512-28t1Q+4taB/UaBAP52W3mD/wcCwa2y2zBieUfBJFBZudbmVgiKJB5YedYILeyI5QByaUKAOwoupmdTbocdQ+CQ=="
-  "resolved" "https://registry.npmmirror.com/hexo-deployer-git/-/hexo-deployer-git-4.0.0.tgz"
-  "version" "4.0.0"
-  dependencies:
-    "bluebird" "^3.7.2"
-    "hexo-fs" "^4.0.0"
-    "hexo-util" "^2.7.0"
-    "luxon" "^3.0.4"
-    "nunjucks" "^3.2.3"
-    "picocolors" "^1.0.0"
-
 "hexo-filter-mermaid-diagrams@^1.0.5":
   "integrity" "sha512-/IkIMKn4V7PBAzMJGNDPSoBFlv1JGvIELXm5AWkR8N5N44kDTNJLtabb4h095UhZQIXOrF9zA1WYhi6wrWLW5Q=="
   "resolved" "https://registry.npmmirror.com/hexo-filter-mermaid-diagrams/-/hexo-filter-mermaid-diagrams-1.0.5.tgz"
@@ -1653,16 +1641,6 @@
     "chokidar" "^3.0.0"
     "graceful-fs" "^4.1.11"
     "hexo-util" "^2.0.0"
-
-"hexo-fs@^4.0.0":
-  "integrity" "sha512-aDysNTyv8ElcerbFVbPLRXnYt+QDY6gAOZZ5DLbCxudY0Ywppqd+uZ03gZ2BDypIBvmNB27WYWYz76M+Yv/YXw=="
-  "resolved" "https://registry.npmmirror.com/hexo-fs/-/hexo-fs-4.1.1.tgz"
-  "version" "4.1.1"
-  dependencies:
-    "bluebird" "^3.7.2"
-    "chokidar" "^3.5.3"
-    "graceful-fs" "^4.2.10"
-    "hexo-util" "^2.7.0"
 
 "hexo-fs@^4.1.1":
   "integrity" "sha512-aDysNTyv8ElcerbFVbPLRXnYt+QDY6gAOZZ5DLbCxudY0Ywppqd+uZ03gZ2BDypIBvmNB27WYWYz76M+Yv/YXw=="
@@ -2524,11 +2502,6 @@
   "integrity" "sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZsulxa30wQ7bk0pm4XiHmA=="
   "resolved" "https://registry.npmmirror.com/lowercase-keys/-/lowercase-keys-2.0.0.tgz"
   "version" "2.0.0"
-
-"luxon@^3.0.4":
-  "integrity" "sha512-tFWBiv3h7z+T/tDaoxA8rqTxy1CHV6gHS//QdaH4pulbq/JuBSGgQspQQqcgnwdAx6pNI7cmvz5Sv/addzHmUg=="
-  "resolved" "https://registry.npmmirror.com/luxon/-/luxon-3.4.3.tgz"
-  "version" "3.4.3"
 
 "map-cache@^0.2.2":
   "integrity" "sha512-8y/eV9QQZCiyn1SprXSrCmqJN0yNRATe+PO8ztwqrvrbdRLA3eYJF0yaR0YayLWkMbsQSKWS9N2gPcGEc4UsZg=="
