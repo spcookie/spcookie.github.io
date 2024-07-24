@@ -182,7 +182,7 @@ article:
   body:
     # 文章顶部信息
     # 从 meta_library 中取
-    top_meta: [date, updated, wordcount] #启用评论数量需在此添加
+    top_meta: [date, updated, wordcount, counter] #启用评论数量需在此添加
     # 文章底部信息
     # 从 meta_library 中取
     bottom_meta: [category, tags, share]
@@ -268,36 +268,36 @@ article:
         url: /
       # 文章创建日期
       date:
-        icon: fa-solid fa-calendar BELIZEHOLE
+        icon: fa-solid fa-calendar # BELIZEHOLE
         title: '发布于：'
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章更新日期
       updated:
-        icon: fa-solid fa-calendar-plus ALIZARIN
+        icon: fa-solid fa-calendar-plus # ALIZARIN
         title: '更新于：'
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章分类
       category:
-        icon: fa-solid fa-folder-open SUNFLOWER
+        icon: fa-solid fa-folder-open # SUNFLOWER
       # 文章浏览计数
       counter:
         icon: fa-solid fa-eye
         unit: '次浏览'
       # waline 文章评论数量
-      # walinecount:
-      #   icon: fa-solid fa-comment-dots
-      #   desc: '条评论' # 条评论
+      walinecount:
+        icon: fa-solid fa-comment-dots
+        desc: '条评论' # 条评论
       # artalk 文章评论数量
       # artalkcount:
       #   icon: fa-solid fa-comment-dots
       #   desc: '条评论' # 条评论
       # 文章字数和阅读时长
       wordcount:
-        icon_wordcount: fa-solid fa-keyboard GREENSEA
-        icon_duration: fa-solid fa-hourglass ORANGE
+        icon_wordcount: fa-solid fa-keyboard # GREENSEA
+        icon_duration: fa-solid fa-hourglass # ORANGE
       # 文章标签
       tags:
-        icon: fa-solid fa-tags GREENSEA
+        icon: fa-solid fa-tags # GREENSEA
       # 分享
       share:
         - id: qq
@@ -542,20 +542,20 @@ sidebar:
     # category widget
     category:
       class: category
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [desktop] # [desktop, mobile]
       sticky: true
       header:
-        icon: fa-solid fa-folder-open SUNFLOWER
+        icon: fa-solid fa-folder-open # SUNFLOWER
         title: 分类
         url: /categories/
     # ---------------------------------------
     # tagcloud widget
     tagcloud:
       class: tagcloud
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [desktop] # [desktop, mobile]
       sticky: true
       header:
-        icon: fa-solid fa-tags GREENSEA
+        icon: fa-solid fa-tags # GREENSEA
         title: 标签
         url: /tags/
       min_font: 14
@@ -597,11 +597,11 @@ sidebar:
           unit: '字'
         visitcounter:
           siteuv:
-            enable: false
+            enable: true
             text: '本站访客数：'
             unit: '人'
           sitepv:
-            enable: false
+            enable: true
             text: '本站总访问量：'
             unit: '次'
         lastupd:
@@ -1296,11 +1296,12 @@ custom_css:
 ############################### Analytics ############################### > start
 analytics:
   busuanzi: #volantis-static/libs/busuanzi/js/busuanzi.pure.mini.js #https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
-    enable: true
+    enable: false
   leancloud: # 请使用自己的 id & key 以防止数据丢失
-    app_id: # u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
-    app_key: # jfHtEKVE24j0IVCGHbvuFClp
-    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
+    enable: true
+    app_id: IJTH74ymIOGdkLFWEkOhWq91-gzGzoHsz # u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
+    app_key: 84BbJfSdeqgSPyQ83YmSuifa # jfHtEKVE24j0IVCGHbvuFClp
+    custom_api_server: https://ijth74ym.lc-cn-n1-shared.com # 国际版一般不需要写，除非自定义了 API Server
 ############################### Analytics ############################### > end
 
 ############################### SEO ############################### > start
