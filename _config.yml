@@ -4,7 +4,7 @@
 
 # Site
 title: "Spcookie'blog"
-favicon: /image/logo.png
+favicon: https://spcookie.oss-cn-hangzhou.aliyuncs.com/logo-2024-07-25.png
 subtitle: "未老已衰之石，未冷已冻之水，未生已死之身，未灼已化之魂。"
 description: "记录学习，分享知识"
 keywords: "学习，分享，整理，搜集"
@@ -99,14 +99,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: volantis
-
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://gitee.com/spcookie/spcookie.git #https://github.com/hexojs/hexojs.github.io
-  branch: gh-pages
-#  message: [message]
 
 # Search
 jsonContent:

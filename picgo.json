@@ -1,0 +1,31 @@
+{
+  "uploaded": [
+    {
+      "fileName": "logo-2024-07-25.png",
+      "width": 248,
+      "height": 248,
+      "extname": ".png",
+      "imgUrl": "https://spcookie.oss-cn-hangzhou.aliyuncs.com/logo-2024-07-25.png",
+      "type": "aliyun",
+      "id": "db9f2673-c2c3-4f0a-a7ee-8452dcdcc1ef"
+    },
+    {
+      "fileName": "index_bg-2024-07-25.jpg",
+      "width": 1280,
+      "height": 720,
+      "extname": ".jpg",
+      "imgUrl": "https://spcookie.oss-cn-hangzhou.aliyuncs.com/index_bg-2024-07-25.jpg",
+      "type": "aliyun",
+      "id": "bf670b94-cbfc-457e-b1bc-28a61047f225"
+    },
+    {
+      "fileName": "avatar-2024-07-25.jpg",
+      "width": 579,
+      "height": 579,
+      "extname": ".jpg",
+      "imgUrl": "https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg",
+      "type": "aliyun",
+      "id": "34980a23-658d-4b35-a719-20c1d66734ba"
+    }
+  ]
+}

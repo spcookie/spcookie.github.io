@@ -166,7 +166,7 @@ cover:
     home: true
     archive: true
     others: true # can be written in front-matter 'cover: true'
-  background: /image/index_bg.jpg
+  background: https://spcookie.oss-cn-hangzhou.aliyuncs.com/index_bg-2024-07-25.jpg
   # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'Spcookie'
@@ -562,7 +562,7 @@ sidebar:
     blogger:
       class: blogger
       display: [ desktop, mobile ] # [desktop, mobile]
-      avatar: /image/avatar.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      avatar: https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
       shape: rectangle # circle, rectangle
       url: /
       title: Spcookie

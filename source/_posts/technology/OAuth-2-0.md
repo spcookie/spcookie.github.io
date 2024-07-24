@@ -40,7 +40,7 @@ OAuth在"客户端"与"服务提供商"之间，设置了一个授权层（autho
 
 OAuth 2.0的运行流程如下图，摘自[RFC 6749](http://www.rfcreader.com/#rfc6749)。
 
-{% image ./oauth2.png %}
+![运行流程](https://s2.loli.net/2024/07/24/LJrDQkmgpfSXEnU.png)
 
 > （A）用户打开客户端以后，客户端要求用户给予授权。
 （B）用户同意给予客户端授权。
@@ -62,7 +62,7 @@ OAuth 2.0的运行流程如下图，摘自[RFC 6749](http://www.rfcreader.com/#r
 
 授权码模式（authorization code）是功能最完整、流程最严密的授权模式。它的特点就是通过客户端的后台服务器，与"服务提供商"的认证服务器进行互动。
 
-{% image ./oauth2.png %}
+![授权码模式](https://s2.loli.net/2024/07/24/F6ojnwReJcArsMP.png)
 
 >（A）用户访问客户端，后者将前者导向认证服务器。
 （B）用户选择是否给予客户端授权。
@@ -140,7 +140,7 @@ Pragma: no-cache
 
 简化模式（implicit grant type）不通过第三方应用程序的服务器，直接在浏览器中向认证服务器申请令牌，跳过了"授权码"这个步骤，因此得名。所有步骤在浏览器中完成，令牌对访问者是可见的，且客户端不需要认证。
 
-{% image ./oauth3.png %}
+![简化模式](https://s2.loli.net/2024/07/24/eT8kI3WZmosBgiY.png)
 
 > （A）客户端将用户导向认证服务器。
 （B）用户决定是否给于客户端授权。
@@ -184,7 +184,7 @@ Location: http://example.com/cb#access_token=2YotnFZFEjr1zCsicMWpAA&state=xyz&to
 
 密码模式（Resource Owner Password Credentials Grant）中，用户向客户端提供自己的用户名和密码。客户端使用这些信息，向"服务商提供商"索要授权。
 
-{% image ./oauth4.png %}
+![密码模式](https://s2.loli.net/2024/07/24/9JGLkhWpdvo6imK.png)
 
 在这种模式中，用户必须把自己的密码给客户端，但是客户端不得储存密码。这通常用在用户对客户端高度信任的情况下，比如客户端是操作系统的一部分，或者由一个著名公司出品。而认证服务器只有在其他授权模式无法执行的情况下，才能考虑使用这种模式。
 
@@ -231,7 +231,7 @@ Pragma: no-cache
 
 客户端模式（Client Credentials Grant）指客户端以自己的名义，而不是以用户的名义，向"服务提供商"进行认证。严格地说，客户端模式并不属于OAuth框架所要解决的问题。在这种模式中，用户直接向客户端注册，客户端以自己的名义要求"服务提供商"提供服务，其实不存在授权问题。
 
-{% image oauth5.png %}
+![客户端模式](https://s2.loli.net/2024/07/24/QOud5phCxromjKn.png)
 
 > （A）客户端向认证服务器进行身份认证，并要求一个访问令牌。
 （B）认证服务器确认无误后，向客户端提供访问令牌。

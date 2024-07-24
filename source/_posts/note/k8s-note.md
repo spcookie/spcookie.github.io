@@ -112,11 +112,11 @@ Kuboard 是一款基于Kubernetes的微服务管理界面，相较于 Dashboard�
 
 ## k8s Cluster
 
-{% image ./k8s-jq.svg::width=640px %}
+{% image https://s2.loli.net/2024/07/24/B81KgE6mXuos3d7.png ::width=640px %}
 
 拥有一个Master(主)节点和六个Worker(工作)节点的k8s集群。
 
-{% image ./k8s-cluster.svg::width=500px %}
+{% image https://s2.loli.net/2024/07/24/lvXqATbmWJDzo9d.png ::width=500px %}
 
 Master 负责管理集群 负责协调集群中的所有活动，例如调度应用程序，维护应用程序的状态，扩展和更新应用程序。
 
@@ -134,7 +134,7 @@ Kubernetes中节点（node）指的是一个工作机器，曾经叫做 `minion`
 
 下图显示一个 Node（节点）上含有4个 Pod（容器组）
 
-{% image ./k8s-nodes.svg::width=480px %}
+{% image https://s2.loli.net/2024/07/24/yZ6Fh5rY3KUGXLk.png ::width=480px %}
 
 Pod（容器组）总是在 **Node（节点）**上运行。Node（节点）是 kubernetes 集群中的计算机，可以是虚拟机或物理机。每个 Node（节点）都由 master 管理。一个 Node（节点）可以有多个Pod（容器组），kubernetes master 会根据每个 Node（节点）上可用资源的情况，自动调度 Pod（容器组）到最佳的 Node（节点）上。
 
@@ -217,7 +217,7 @@ Deployment 译名为 部署。在k8s中，通过发布 Deployment，可以创建
 
 创建应用程序实例后，Kubernetes Deployment Controller 会持续监控这些实例。如果运行实例的 worker 节点关机或被删除，则 Kubernetes Deployment Controller 将在群集中资源最优的另一个 worker 节点上重新创建一个新的实例。这提供了一种自我修复机制来解决机器故障或维护问题。
 
-{% image ./k8s-first-app.svg::width=480px %}
+{% image https://s2.loli.net/2024/07/24/DIfNc16uazjAohs.png ::width=480px %}
 
 Deployment 处于 master 节点上，通过发布 Deployment，master 节点会选择合适的 worker 节点创建 Container（即图中的正方体），Container 会被包含在 Pod （即蓝色圆圈）里。
 
@@ -261,11 +261,11 @@ kubectl apply -f nginx-deployment.yaml
 
 下图中，Service A 只将访问流量转发到 IP 为 10.0.0.5 的Pod上。
 
-{% image ./k8s-scaling1.svg::width=480px %}
+{% image https://s2.loli.net/2024/07/24/EYwgptMb1vfaWJy.png ::width=480px %}
 
 修改了 Deployment 的 replicas 为 4 后，Kubernetes 又为该 Deployment 创建了 3 新的 Pod，这 4 个 Pod 有相同的标签。因此Service A通过标签选择器与新的 Pod 建立了对应关系，将访问流量通过负载均衡在 4 个 Pod 之间进行转发。
 
-{% image ./k8s-scaling2.svg::width=480px %}
+{% image https://s2.loli.net/2024/07/24/5jm9TXu1wIilRNO.png ::width=480px %}
 
 > 通过更改部署中的 replicas（副本数）来完成扩展
 
@@ -309,7 +309,7 @@ kubectl apply -f nginx-deployment.yaml
 
 ### Pod概述
 
-{% image ./k8s-pods.svg::width=480px %}
+{% image https://s2.loli.net/2024/07/24/Hn3KRQACqDkYsrw.png ::width=480px %}
 
 **Pod 容器组** 是一个k8s中一个抽象的概念，用于存放一组 container（可包含一个或多个 container 容器，即图上正方体），以及这些 container （容器）的一些共享资源。这些资源包括：
 
@@ -352,7 +352,7 @@ Kubernetes 中的 **Service** 提供了这样的一个抽象层，它选择具�
 
 下图中有两个服务Service A(黄色虚线)和Service B(蓝色虚线) Service A 将请求转发到 IP 为 10.10.10.1 的Pod上， Service B 将请求转发到 IP 为 10.10.10.2、10.10.10.3、10.10.10.4 的Pod上。
 
-{% image ./k8s-services.svg::width=480px %}
+{% image https://s2.loli.net/2024/07/24/D56qn2bWfrakM7V.png ::width=480px %}
 
 Service 将外部请求路由到一组 Pod 中，它提供了一个抽象层，使得 Kubernetes 可以在不影响服务调用者的情况下，动态调度容器组{% span gray::（在容器组失效后重新创建容器组，增加或者减少同一个 Deployment 对应容器组的数量等） %}。
 
@@ -368,7 +368,7 @@ Service使用 Labels、LabelSelector(标签和选择器) 匹配一组 Pod。Labe
 - 通过 Deployment B 创建的 Pod 包含标签为 app=B
 - Service B 通过标签选择器 app=B 选择可以路由的 Pod
 
-{% image ./k8s-labels.svg::width=480px %}
+{% image https://s2.loli.net/2024/07/24/5tUDCNp9RdhvXWq.png ::width=480px %}
 
 > Labels（标签）可以在创建 Kubernetes 对象时附加上去，也可以在创建之后再附加上去。任何时候都可以修改一个Kubernetes 对象的 Labels（标签）
 
