@@ -1,16 +1,15 @@
 ---
-title: { { title } }
+title: {{ title }}
 categories: [ ]
 tags: [ ]
 keywords: 
 description: 
 author: Spcookie
 group: default
-date:
-updated:
-comments: false
+date: {{ data }}
+updated: {{ data }}
+comments: true
 readmore: false
-excerpt: 
 references:
     - title: 某篇文章
       url: https://
@@ -20,6 +19,8 @@ copyright:
    ref:                            # 原文出处
      title: 原文出处 - 标题          # 原文出处 - 标题
      url: 原文出处 - 链接            # 原文出处 - 链接
+plugins:
+  - indent
 ---
 
 <!-- more -->

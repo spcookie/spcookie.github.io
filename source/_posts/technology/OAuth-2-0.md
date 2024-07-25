@@ -13,6 +13,8 @@ references:
     url: https://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html
 keywords:
 description:
+plugins:
+  - indent
 ---
 
 OAuth是一个关于授权（authorization）的开放网络标准，在全世界得到广泛应用。

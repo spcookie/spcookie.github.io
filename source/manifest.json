@@ -6,10 +6,10 @@
     "lang": "zh-CN",
     "display": "fullscreen",
     "background_color": "#fff",
-    "description": "A blog app.",
+    "description": "A blog app",
     "icons": [
       {
-        "src": "https://s2.loli.net/2024/07/24/9x1WYlBNZtAv3KO.png",
+        "src": "https://spcookie.oss-cn-hangzhou.aliyuncs.com/logo-2024-07-25.png",
         "sizes": "248x248",
         "type": "image/png"
       }
