@@ -1,8 +1,13 @@
 var RENDERER = {
+    // 点间隔：5
     POINT_INTERVAL: 5,
+    // 鱼计数：3
     FISH_COUNT: 3,
+    // 最大间隔计数：50
     MAX_INTERVAL_COUNT: 50,
+    // 初始权重：0.5
     INIT_HEIGHT_RATE: 0.5,
+    // 阈值：50
     THRESHOLD: 50,
 
     init: function () {

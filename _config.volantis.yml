@@ -170,7 +170,7 @@ cover:
   # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'Spcookie'
-  subtitle: 'Do not fear mistakes. You will know failure. Continue to reach out.'
+  subtitle: '<div id="binft"></div>' #'Do not fear mistakes. You will know failure. Continue to reach out.'
   search: Search... # search bar placeholder
   features:
     - name: 首页
@@ -374,14 +374,14 @@ article:
 comments:
   title: <i class='fa-solid fa-comments'></i> 评论
   subtitle:
-  service: giscus
+  service: artalk
   # 可选评论系统 #
 
   # artalk
   # https://artalk.js.org/
   # https://github.com/ArtalkJS/Artalk
   artalk:
-    server: https://yours-artalk-domain    # 修改为自建的后端服务地址
+    server: https://artalk-znaeomqkfh.cn-hangzhou.fcapp.run    # 修改为自建的后端服务地址
     path:  # 全局评论地址
     placeholder: # 评论占位
     visitor: true # 是否显示文章阅读数
@@ -575,8 +575,8 @@ sidebar:
           url: mailto:1307083930@qq.com
         - icon: fab fa-github
           url: https://github.com/spcookie/
-#        - icon: fa-solid fa-headphones-alt
-#          url: /
+    #   - icon: fa-solid fa-headphones-alt
+    #     url: /
     # ---------------------------------------
     # toc widget (valid only in articles)
     toc:

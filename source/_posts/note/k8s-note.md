@@ -4,6 +4,8 @@ categories: [ 开发笔记 ]
 tags: [ kubernetes ]
 author: Spcookie
 group: default
+date: 2024/7/17 9:15:00
+updated: 2024/7/22 14:15:00
 comments: true
 readmore: false
 references:
@@ -11,7 +13,6 @@ references:
     url: https://www.kuboard.cn/learning/
 keywords: [k8s, kubernetes]
 description: k8s学习笔记
-indent: true
 ---
 
 Kubernetes是一个可以移植、可扩展的开源平台，使用 声明式的配置 并依据配置信息自动地执行容器化应用程序的管理。
