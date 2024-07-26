@@ -127,7 +127,7 @@ navbar:
   logo: # choose [img] or [icon + title]
     img: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
     icon: #fa-solid fa-blog
-    title: Spcookie
+    title: 咸小鱼的猫会发光
   menu:
     - name: 首页
       icon: fa-solid fa-feather-pointed teal
@@ -169,7 +169,7 @@ cover:
   background: https://spcookie.oss-cn-hangzhou.aliyuncs.com/index_bg-2024-07-25.jpg
   # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: 'Spcookie'
+  title: '咸小鱼的猫会发光'
   subtitle: '<div id="binft"></div>' #'Do not fear mistakes. You will know failure. Continue to reach out.'
   search: Search... # search bar placeholder
   features:
@@ -372,7 +372,7 @@ article:
 
 ############################### Comments ############################### > start
 comments:
-  title: <i class='fa-solid fa-comments'></i> 评论
+  title: <i class='fa-solid fa-comments NEPHRITIS'></i> 评论
   subtitle:
   service: artalk
   # 可选评论系统 #
@@ -565,7 +565,7 @@ sidebar:
       avatar: https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
       shape: rectangle # circle, rectangle
       url: /
-      title: Spcookie
+      title: 咸小鱼
       subtitle: ٩(•̤̀ᵕ•̤́๑)
       jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
@@ -763,7 +763,7 @@ plugins:
   # 预加载
   preload:
     enable: true
-    service: instant_page # instant_page, flying_pages
+    service: flying_pages # instant_page, flying_pages
 
   # 图片懒加载
   # https://www.npmjs.com/package/vanilla-lazyload
@@ -772,7 +772,7 @@ plugins:
   # 在支持 srcset 的浏览器或者 RSS 阅读器(还会有人使用老旧的阅读器?)上会优先读取 srcset 加载的图片(懒加载占位图), 对于 RSS 中图片丢失变成懒加载占位图的问题, 建议 自行使用脚本移除 srcset 属性 或 关闭图片懒加载 或 在 RSS 中插入 vanilla-lazyload
   lazyload:
     enable: true
-    onlypost: false
+    onlypost: true
     loadingImg: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3/img/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg # 不建议使用占位图, 建议loadingImg为空, 当前占位图会产生布局偏移, loadingImg 为空占位图是一个 1X1 像素的图片
     blurIn: true # 模糊加载效果 （loadingImg为空时有效）
 
@@ -1309,23 +1309,23 @@ custom_css:
     footnote: .78125rem
   fontfamily:
     logofont:
-      fontfamily: '"Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      fontfamily: '"Varela Round", "LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'Varela Round'
       url: volantis-static/media/fonts/VarelaRound/VarelaRound-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf
       weight: normal
       style: normal
     bodyfont:
-      fontfamily: 'UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
-      name: 'UbuntuMono'
-      url: volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      fontfamily: 'Monaco, "LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'LXGW WenKai Screen'
+      url: /font/LXGWWenKaiMonoScreen.ttf # volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal
       style: normal
     codefont:
-      fontfamily: 'Menlo, UbuntuMono, Monaco'
-      # name: 'Monaco'
-      # url: volantis-static/media/fonts/Monaco/Monaco.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
-      # weight: normal
-      # style: normal
+      fontfamily: 'Monaco, Menlo'
+      name: 'Monaco'
+      url: volantis-static/media/fonts/Monaco/Monaco.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
+      weight: normal
+      style: normal
 ############################### Custom css ############################### > end
 
 ############################### SEO ############################### > start

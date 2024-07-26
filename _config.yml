@@ -3,19 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "Spcookie'blog"
+title: "咸小鱼的猫会发光"
 favicon: https://spcookie.oss-cn-hangzhou.aliyuncs.com/logo-2024-07-25.png
 subtitle: "未老已衰之石，未冷已冻之水，未生已死之身，未灼已化之魂。"
 description: "记录学习，分享知识"
 keywords: "学习，分享，整理，搜集"
-author: "Spcookie"
+author: "咸小鱼"
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://spcookie.github.io
-permalink: :title/ #:year/:month/:day/:title/
+permalink: post/:hash/ #:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
