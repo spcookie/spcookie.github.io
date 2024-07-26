@@ -67,3 +67,13 @@ code
     font-weight: 600
     background: var(--color-codeblock)
     border-radius: 0.4em !important
+
+// 覆盖代码块背景色
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: var(--color-block) !important
+}
+
+// prismjs主题文本颜色统一
+code[class*=language-], pre[class*=language-] {
+    color: var(--color-text) !important
+}
