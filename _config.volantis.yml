@@ -799,7 +799,7 @@ plugins:
       - https://unpkg.com/prismjs/plugins/autoloader/prism-autoloader.min.js
       - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.min.js
     css:
-      - https://unpkg.com/prismjs/themes/prism.min.css
+      - https://unpkg.com/prismjs/themes/prism-tomorrow.min.css
       - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.min.css
 
   # https://scrollrevealjs.org/api/reveal.html
