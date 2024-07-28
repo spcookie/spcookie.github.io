@@ -1017,12 +1017,12 @@ plugins:
   # Gitter
   # https://gitter.im
   gitter:
-    room: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    room: spcookie:gitter.im
 
   # swiper
   # https://www.swiper.com.cn/
   swiper:
-    enable: true
+    enable: false
 
   # AI摘要
   # https://github.com/zhheo/Post-Abstract-AI
