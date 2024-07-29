@@ -58,11 +58,11 @@ CAS Server负责完成对用户的认证工作, 需要独立部署, CAS Server�
 > Cookie中的CASTGC：当下次访问cas.example.com时，浏览器将Cookie中的TGC携带到服务器，服务器根据这个TGC，查找与之对应的TGT。从而判断用户是否登录过了，是否需要展示登录页面。
 > - TGT：Ticket Granted Ticket（大令牌，可以签发ST）
 > - TGC：Ticket Granted Cookie（Cookie中CASTGC的值），存在Cookie中，根据他可以找到TGT。
-> - ST：Service Ticket （小令牌），是TGT生成的，默认是用一次就生效了。ticket值。
+> - ST：Service Ticket （小令牌），是TGT生成的，默认是用一次就失效了。ticket值。
 
 用户第二次访问app1资源
 
-![cas-app1-2](https://spcookie.oss-cn-hangzhou.aliyuncs.com/cas-app1-2-2024-07-29.jpg)
+{% image https://spcookie.oss-cn-hangzhou.aliyuncs.com/cas-app1-2-2024-07-29.jpg::width=360px %}
 
 1. 用户发起请求，访问app1.example.com。会经过cas-client，也就是过滤器，因为第一次访问成功之后app1.example.com中会在session中记录用户信息，因此这里直接就通过了，不用验证了。
 2. 用户通过权限验证，浏览器返回正常资源。
