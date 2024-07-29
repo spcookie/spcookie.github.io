@@ -17,7 +17,7 @@ date: 2024/7/29
 updated: 2024/7/29
 ---
 
-CAS （ Central Authentication Service ） 是Yale大学发起的一个企业级的、开源的项目，旨在为Web应用系统提供一种可靠的单点登录解决方法（属于Web SSO）。
+CAS（ Central Authentication Service ）是Yale大学发起的一个企业级的、开源的项目，旨在为Web应用系统提供一种可靠的单点登录解决方法（属于Web SSO）。
 
 <!-- more -->
 
@@ -25,15 +25,15 @@ CAS （ Central Authentication Service ） 是Yale大学发起的一个企业级
 
 ### 结构体系
 
-从结构体系看， CAS 包括两部分： CAS Server 和 CAS Client 。
+从结构体系看，CAS包括两部分：CAS Server和CAS Client。
 
 #### CAS Server
 
-CAS Server 负责完成对用户的认证工作, 需要独立部署, CAS Server 会处理用户名 / 密码等凭证(Credentials) 。
+CAS Server负责完成对用户的认证工作, 需要独立部署, CAS Server会处理用户名/密码等凭证(Credentials) 。
 
 #### CAS Client
 
-负责处理对客户端受保护资源的访问请求，需要对请求方进行身份认证时，重定向到 CAS Server 进行认证。CAS Client 与受保护的客户端应用部署在一起，以 Filter 方式保护受保护的资源。
+负责处理对客户端受保护资源的访问请求，需要对请求方进行身份认证时，重定向到CAS Server进行认证。CAS Client与受保护的客户端应用部署在一起，以Filter方式保护受保护的资源。
 
 ### 认证流程
 
