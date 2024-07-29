@@ -66,16 +66,6 @@ CAS Server负责完成对用户的认证工作, 需要独立部署, CAS Server�
 
 1. 用户发起请求，访问app1.example.com。会经过cas-client，也就是过滤器，因为第一次访问成功之后app1.example.com中会在session中记录用户信息，因此这里直接就通过了，不用验证了。
 2. 用户通过权限验证，浏览器返回正常资源。
-用户第一次访问app2资源
-1. 用户请求app2.example.com，发现第一次访问，于是给他一个重定向的地址，让他去找认证中心（CAS server）登录。
-2. app2.example.com发现用户没有登录（没有Cookie: SESSIONID），则返回浏览器重定向地址并且通过get的方式添加参数service，该参数目的是登录成功之后会要重定向回来。
-3. 浏览器发起重定向，因为之前访问过一次了，因此这次会携带上次返回的Cookie：TGC到认证中心。
-4. 认证中心收到请求，发现TGC对应了一个TGT，于是用TGT签发一个ST(ticket)，并且返回给浏览器，让他重定向到app2.example.com。
-5. 浏览器根据返回的网址（app2.example.com?ticket=ST-7-GfpdKd.....）发起重定向。
-6. app2.example.com获取ticket去认证中心验证是否有效。
-7. 认证成功。
-8. 创建对应的SESSION，返回Cookie值SESSIONID。
-9. 展示相关资源到用户浏览器上。
 
 用户第一次访问app2资源
 
