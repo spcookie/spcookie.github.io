@@ -79,3 +79,14 @@ code[class*=language-], pre[class*=language-]
 // 序号缩进增加
 .md ol
     margin-left: 20px !important
+
+// 代码块行号和语言类型固定
+pre[class*=language-].line-numbers, pre[class*=language-].line-numbers>code
+   position: static !important
+
+.line-numbers .line-numbers-rows
+    top: 16px !important
+    left: 0 !important
+    background-color: var(--color-block) !important
+    background-clip: content-box !important
+    border-left: 1px solid transparent !important
