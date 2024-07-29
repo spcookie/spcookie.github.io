@@ -1,7 +1,7 @@
 ---
 title: 理解OAuth2.0
 categories: [ 技术积累 ]
-tags: [ 认证, OAuth2.0 ]
+tags: [ 认证, SSO]
 author: Spcookie
 group: default
 date: 2024/7/23 14:35:00

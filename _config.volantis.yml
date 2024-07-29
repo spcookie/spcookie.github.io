@@ -1315,7 +1315,7 @@ custom_css:
       weight: normal
       style: normal
     bodyfont:
-      fontfamily: 'Monaco, "LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      fontfamily: '"LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'LXGW WenKai Screen'
       url: /font/LXGWWenKaiMonoScreen.ttf # volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal

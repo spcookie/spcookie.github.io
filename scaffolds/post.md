@@ -1,13 +1,13 @@
 ---
-title: {{ title }}
+title: { title }
 categories: [ ]
 tags: [ ]
 keywords: 
 description: 
-author: Spcookie
+author: 咸小鱼
 group: default
-date: {{ data }}
-updated: {{ data }}
+date: { data }
+updated: { data }
 comments: true
 readmore: false
 references:
