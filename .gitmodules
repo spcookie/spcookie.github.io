@@ -1,9 +1,6 @@
 [submodule "themes/volantis"]
 	path = themes/volantis
 	url = https://github.com/spcookie/hexo-theme-volantis.git
-[submodule "cdn/repo"]
-	path = cdn/repo
-	url = https://github.com/spcookie/repo.spcookie.github.io.git
 [submodule "cdn/static"]
 	path = cdn/static
 	url = https://github.com/spcookie/static.spcookie.github.io.git
