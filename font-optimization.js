@@ -12,7 +12,7 @@ const directories = [path.join(__dirname, '/source'), path.join(__dirname, '/cdn
 const specificFiles = [path.join(__dirname, '/_config.volantis.yml'), path.join(__dirname, '/_config.yml')];
 
 // 定义本地缓存路径
-const fontCachePath = path.join(__dirname, '/cdn/static/LXGWWenKaiMonoScreen.ttf');
+const fontCachePath = path.join(__dirname, '/source/LXGWWenKaiMonoScreen.ttf');
 
 // 不可见字符和非基本多文种平面（BMP）字符
 const filterRegex = /[\0-\u001F\u007F-\u009F\u2000-\u206F\uFEFF\uFFF0-\uFFFF]/gu;
@@ -84,7 +84,7 @@ function optimizeFont() {
     // 创建 Fontmin 实例
     const fontmin = new Fontmin()
         .src('cdn/static/LXGWWenKaiMonoScreen.ttf') // 指定源字体文件路径
-        .dest('cdn/static/font') // 指定输出路径
+        .dest('source') // 指定输出路径
         .use(Fontmin.glyph({ // 使用 glyph 插件
             text: chars,
             hinting: false  // keep ttf hint info (fpgm, prep, cvt). default = true
