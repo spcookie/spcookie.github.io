@@ -41,7 +41,7 @@ cdn_system:
     # Tip: 在本配置文件中 匹配以 "volantis-local" 开头的链接路径替换为该格式的前缀开头 prefix
     local:
       # CDN 链接前缀
-      prefix: ${site_root}
+      prefix: https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io/
       # local CDN 格式
       format: ${prefix}${file}
     # npm
@@ -117,6 +117,7 @@ replace:
 dns_prefetch:
   - https://unpkg.com
   - https://cdn.bootcdn.net
+  - https://gcore.jsdelivr.net/gh/
 
 # 平滑滚动效果
 scroll_smooth: true
@@ -320,7 +321,7 @@ article:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar: volantis-static/media/org.volantis/blog/favicon/apple-touch-icon.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
+        avatar: https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
         name: Spcookie
         url: /
       # 文章创建日期
@@ -1317,7 +1318,7 @@ custom_css:
     bodyfont:
       fontfamily: '"LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'LXGW WenKai Screen'
-      url: "https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io/font/LXGWWenKaiMonoScreen.ttf" # volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      url: "volantis-local/font/LXGWWenKaiMonoScreen.ttf" # volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal
       style: normal
     codefont:
