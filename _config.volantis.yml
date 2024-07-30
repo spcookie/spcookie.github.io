@@ -41,9 +41,9 @@ cdn_system:
     # Tip: 在本配置文件中 匹配以 "volantis-local" 开头的链接路径替换为该格式的前缀开头 prefix
     local:
       # CDN 链接前缀
-      prefix: https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io/
+      prefix: https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io
       # local CDN 格式
-      format: ${prefix}${file}
+      format: ${prefix}/${file}
     # npm
     # https://www.npmjs.com/
     # Tip: 在本配置文件中 匹配以 "volantis-npm" 开头的链接路径替换为该格式的前缀开头 prefix
@@ -1318,7 +1318,7 @@ custom_css:
     bodyfont:
       fontfamily: '"LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'LXGW WenKai Screen'
-      url: "LXGWWenKaiMonoScreen.ttf" # volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      url: "volantis-local/font/LXGWWenKaiMonoScreen.ttf" # volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal
       style: normal
     codefont:

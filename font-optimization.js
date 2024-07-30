@@ -20,16 +20,6 @@ const filterRegex = /[\0-\u001F\u007F-\u009F\u2000-\u206F\uFEFF\uFFF0-\uFFFF]/gu
 // 用于存储所有字符的集合, 定义特定的
 let allChars = '胜可';
 
-// 检查字体文件是否已缓存
-function checkFontCache(fontCachePath) {
-    try {
-        fs.accessSync(fontCachePath, fs.constants.F_OK);
-        console.log('Font is already cached.');
-    } catch (err) {
-        console.log('Font not cached.');
-    }
-}
-
 // 递归函数，用于读取文件夹中的所有文件
 function readDirectory(directory) {
     fs.readdirSync(directory).forEach(file => {
@@ -84,7 +74,7 @@ function optimizeFont() {
     // 创建 Fontmin 实例
     const fontmin = new Fontmin()
         .src('cdn/static/LXGWWenKaiMonoScreen.ttf') // 指定源字体文件路径
-        .dest('source') // 指定输出路径
+        .dest('cdn/static/font') // 指定输出路径
         .use(Fontmin.glyph({ // 使用 glyph 插件
             text: chars,
             hinting: false  // keep ttf hint info (fpgm, prep, cvt). default = true
@@ -103,7 +93,6 @@ function optimizeFont() {
 // 检查字体缓存并执行相应操作
 function checkAndProcessFont() {
     try {
-        checkFontCache(fontCachePath);
         optimizeFont();
     } catch (err) {
         console.error('Error:', err);
