@@ -1,7 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
-const http = require('http');
 const Fontmin = require('fontmin');
 
 // 定义要搜索的文件扩展名
@@ -108,10 +106,7 @@ function checkAndProcessFont() {
     }
 }
 
-hexo.on('ready', function () {
-    console.log('Font optimization start...')
+console.log('Font optimization start...')
 
-    // 执行下载和缓存操作,优化字体
-    checkAndProcessFont()
-
-});
+// 优化字体
+checkAndProcessFont()
