@@ -13,9 +13,6 @@ const directories = [path.join(__dirname, '../source/')];
 // 定义特定的文件路径数组
 const specificFiles = [path.join(__dirname, '../_config.volantis.yml'), path.join(__dirname, '../_config.yml')];
 
-// 定义特定的 GitHub 字体文件 URL 和
-const fontUrl = 'https://cdn.jsdelivr.net/gh/spcookie/cdn.spcookie.github.io/font/LXGWWenKaiMonoScreenFull.ttf'; 
-
 // 定义本地缓存路径
 const fontCachePath = path.join(__dirname, '../cdn/repo/LXGWWenKaiMonoScreen.ttf');
 
@@ -84,8 +81,8 @@ function optimizeFont() {
 
     // 创建 Fontmin 实例
     const fontmin = new Fontmin()
-        .src('cdn/repo/font/LXGWWenKaiMonoScreenFull.ttf') // 指定源字体文件路径
-        .dest('cdn/repo/font/') // 指定输出路径
+        .src('cdn/static/font/LXGWWenKaiMonoScreenFull.ttf') // 指定源字体文件路径
+        .dest('cdn/static/font/') // 指定输出路径
         .use(Fontmin.glyph({ // 使用 glyph 插件
             text: chars,
             hinting: false  // keep ttf hint info (fpgm, prep, cvt). default = true
