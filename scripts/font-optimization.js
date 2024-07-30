@@ -14,10 +14,10 @@ const directories = [path.join(__dirname, '../source/')];
 const specificFiles = [path.join(__dirname, '../_config.volantis.yml'), path.join(__dirname, '../_config.yml')];
 
 // 定义特定的 GitHub 字体文件 URL 和
-const fontUrl = 'https://github.com/spcookie/cdn.spcookie.github.io/raw/master/LXGWWenKaiMonoScreen.ttf';
+const fontUrl = 'https://cdn.jsdelivr.net/gh/spcookie/cdn.spcookie.github.io/font/LXGWWenKaiMonoScreenFull.ttf'; 
 
 // 定义本地缓存路径
-const fontCachePath = path.join(__dirname, '../LXGWWenKaiMonoScreen.ttf');
+const fontCachePath = path.join(__dirname, '../cdn/repo/LXGWWenKaiMonoScreen.ttf');
 
 // 不可见字符和非基本多文种平面（BMP）字符
 const filterRegex = /[\0-\u001F\u007F-\u009F\u2000-\u206F\uFEFF\uFFF0-\uFFFF]/gu;
@@ -25,45 +25,14 @@ const filterRegex = /[\0-\u001F\u007F-\u009F\u2000-\u206F\uFEFF\uFFF0-\uFFFF]/gu
 // 用于存储所有字符的集合, 定义特定的
 let allChars = '胜可';
 
-// 下载字体文件并缓存到本地，处理可能的重定向
-function downloadAndCacheFont(url, dest) {
-    return new Promise((resolve, reject) => {
-        // 根据 URL 的协议选择 http 或 https
-        const protocol = url.startsWith('https') ? https : http;
-        const req = protocol.get(url, (response) => {
-            if (response.statusCode === 200) {
-                const fileStream = fs.createWriteStream(dest);
-                response.pipe(fileStream);
-                fileStream.on('finish', () => {
-                    fileStream.close(resolve);
-                });
-            } else if (response.statusCode === 302) {
-                // 处理重定向
-                const redirectedUrl = response.headers.location;
-                console.log(`Redirected to ${redirectedUrl}`);
-                downloadAndCacheFont(redirectedUrl, dest).then(resolve).catch(reject);
-            } else {
-                reject(new Error(`Failed to download font: Status code ${response.statusCode}`));
-            }
-        });
-
-        req.on('error', (err) => {
-            reject(err);
-        });
-    });
-}
-
 // 检查字体文件是否已缓存
 function checkFontCache(fontCachePath) {
-    return new Promise((resolve, reject) => {
-        fs.access(fontCachePath, fs.constants.F_OK, (err) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve();
-            }
-        });
-    });
+    try {
+        fs.accessSync(fontCachePath, fs.constants.F_OK);
+        console.log('Font is already cached.');
+    } catch (err) {
+        console.log('Font not cached.');
+    }
 }
 
 // 递归函数，用于读取文件夹中的所有文件
@@ -115,8 +84,8 @@ function optimizeFont() {
 
     // 创建 Fontmin 实例
     const fontmin = new Fontmin()
-        .src('LXGWWenKaiMonoScreen.ttf') // 指定源字体文件路径
-        .dest('source/font') // 指定输出路径
+        .src('cdn/repo/font/LXGWWenKaiMonoScreenFull.ttf') // 指定源字体文件路径
+        .dest('cdn/repo/font/') // 指定输出路径
         .use(Fontmin.glyph({ // 使用 glyph 插件
             text: chars,
             hinting: false  // keep ttf hint info (fpgm, prep, cvt). default = true
@@ -134,22 +103,12 @@ function optimizeFont() {
 
 // 检查字体缓存并执行相应操作
 function checkAndProcessFont() {
-    checkFontCache(fontCachePath)
-        .then(() => {
-            console.log('Font is already cached.');
-            optimizeFont();
-        })
-        .catch(() => {
-            console.log('Font not cached, downloading...');
-            downloadAndCacheFont(fontUrl, fontCachePath)
-                .then(() => {
-                    console.log('Font downloaded and cached successfully.');
-                    optimizeFont();
-                })
-                .catch((err) => {
-                    console.error('Error downloading or caching font:', err);
-                });
-        });
+    try {
+        checkFontCache(fontCachePath);
+        optimizeFont();
+    } catch (err) {
+        console.error('Error:', err);
+    }
 }
 
 hexo.on('ready', function () {
