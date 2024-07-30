@@ -76,6 +76,10 @@ function optimizeFont() {
 
     // 将排序后的字符数组转换为字符串
     const chars = charsArray.join('');
+    
+    console.log('============================================================')
+    console.log(chars)
+    console.log('============================================================')
 
     // 创建 Fontmin 实例
     const fontmin = new Fontmin()
