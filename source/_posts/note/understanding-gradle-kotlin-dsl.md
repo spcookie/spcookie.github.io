@@ -1,8 +1,9 @@
 ---
 title: 了解Gradle kotlin DSL
+cover: false
 categories: [ 开发笔记 ]
 tags: [ gradle, kotlin ]
-comments: false
+comments: true
 keywords:
 description:
 author: Spcookie

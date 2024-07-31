@@ -1,5 +1,6 @@
 ---
 title: k8s学习笔记
+cover: false
 categories: [ 开发笔记 ]
 tags: [ kubernetes ]
 author: Spcookie

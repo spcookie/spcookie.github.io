@@ -1,5 +1,6 @@
 ---
 title: CAS单点登录原理
+cover: false
 categories: [ 技术积累 ]
 tags: [ 认证, SSO ]
 group: default

@@ -1,8 +1,9 @@
 ---
 title: 分享一个学习Spring的中文文档
+cover: false
 categories: [ 收录 ]
 tags: [ spring, java ]
-comments: false
+comments: true
 keywords:
 description:
 author: Spcookie

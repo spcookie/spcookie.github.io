@@ -1,5 +1,6 @@
 ---
 title: 理解OAuth2.0
+cover: false
 categories: [ 技术积累 ]
 tags: [ 认证, SSO]
 author: Spcookie

@@ -322,7 +322,7 @@ article:
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
         avatar: https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
-        name: Spcookie
+        name: 咸小鱼
         url: /
       # 文章创建日期
       date:
@@ -564,7 +564,7 @@ sidebar:
       class: blogger
       display: [ desktop, mobile ] # [desktop, mobile]
       avatar: https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-      shape: rectangle # circle, rectangle
+      shape: circle # circle, rectangle
       url: /
       title: 咸小鱼
       subtitle: ٩(•̤̀ᵕ•̤́๑)

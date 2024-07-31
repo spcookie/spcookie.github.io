@@ -1,5 +1,6 @@
 ---
 title: { title }
+cover: false
 categories: [ ]
 tags: [ ]
 keywords: 

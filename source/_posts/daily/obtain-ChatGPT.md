@@ -1,8 +1,9 @@
 ---
 title: 🌟如何拥有自己的ChatGPT
+cover: false
 categories: [ 日常随写 ]
 tags: [ ai, gpt ]
-comments: false
+comments: true
 keywords:
 description:
 author: Spcookie

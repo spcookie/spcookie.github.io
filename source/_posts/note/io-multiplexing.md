@@ -1,8 +1,9 @@
 ---
 title: IO多路复用-select、poll、epoll机制与区别
+cover: false
 categories: [ 开发笔记 ]
 tags: [ kernel ]
-comments: false
+comments: true
 keywords:
 description:
 author: Spcookie

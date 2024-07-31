@@ -1,8 +1,9 @@
 ---
 title: GitHub主页美化？
+cover: false
 categories: [ 日常随写 ]
 tags: [ github ]
-comments: false
+comments: true
 keywords:
 description:
 author: Spcookie

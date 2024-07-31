@@ -1,8 +1,9 @@
 ---
 title: MinIO学习笔记
+cover: false
 categories: [ 开发笔记 ]
 tags: [ storage ]
-comments: false
+comments: true
 keywords:
 description:
 author: Spcookie
