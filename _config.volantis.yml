@@ -562,7 +562,7 @@ sidebar:
     # blogger info widget
     blogger:
       class: blogger
-      display: [ desktop, mobile ] # [desktop, mobile]
+      display: [desktop] # [desktop, mobile]
       avatar: https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
       shape: circle # circle, rectangle
       url: /
@@ -594,7 +594,7 @@ sidebar:
     # music
     music:
       class: music
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [desktop] # [desktop, mobile]
     # ---------------------------------------
     # category widget
     category:
