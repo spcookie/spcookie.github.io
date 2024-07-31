@@ -1,10 +1,13 @@
 {
-    "name": "MatrixBlog",
+   "id": "L0419",
+    "name": "Blog",
     "short_name": "Blog",
-    "start_url": ".",
+    "form_factor":"wide",
+    "start_url": "./index.html",
     "dir": "auto",
     "lang": "zh-CN",
-    "display": "fullscreen",
+    "display": "standalone",
+    "theme_color": "#4DBA87",
     "background_color": "#fff",
     "description": "咸小鱼的猫会发光の博客",
     "icons": [
