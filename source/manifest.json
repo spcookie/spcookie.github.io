@@ -2,12 +2,10 @@
     "id": "SLF0419",
     "name": "SLF's Blog",
     "short_name": "Blog",
-    "form_factor":"wide",
     "start_url": "./index.html",
     "dir": "auto",
     "lang": "zh-CN",
     "display": "standalone",
-    "theme_color": "#4DBA87",
     "background_color": "#fff",
     "description": "咸小鱼的猫会发光の博客",
     "icons": [
