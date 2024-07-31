@@ -1,6 +1,6 @@
 {
-    "name": "Spc",
-    "short_name": "Spc",
+    "name": "MatrixBlog",
+    "short_name": "Blog",
     "start_url": ".",
     "dir": "auto",
     "lang": "zh-CN",
