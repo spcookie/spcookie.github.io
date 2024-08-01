@@ -59,7 +59,7 @@ prismjs:
   preprocess: false
   line_number: true
   tab_replace: ''
-  # line_threshold: 1
+  line_threshold: 1
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
