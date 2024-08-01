@@ -1,9 +1,11 @@
+// 顶部导航栏铺满
 .l_header
   @media screen and (max-width: $device-2k)
     left: 0 !important
     border-radius: 0 !important
     max-width: 100% !important
-    
+
+// 链接样式
 .article a:not([class]):not([data-fancybox]),
 .content > a
   position: relative
@@ -69,16 +71,24 @@ code
     border-radius: 0.4em !important
 
 // 覆盖代码块背景色
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
+:not(pre) > code[class*="language-"], pre[class*="language-"]
     background: var(--color-block) !important
-}
 
 // prismjs主题文本颜色统一
-code[class*=language-], pre[class*=language-] {
+code[class*=language-], pre[class*=language-]
     color: var(--color-text) !important
-}
 
 // 序号缩进增加
-.md ol {
+.md ol
     margin-left: 20px !important
-}
+
+// 代码块行号和语言类型固定
+pre[class*=language-].line-numbers, pre[class*=language-].line-numbers>code
+   position: static !important
+
+.line-numbers .line-numbers-rows
+    top: 16px !important
+    left: 0 !important
+    background-color: var(--color-block) !important
+    background-clip: content-box !important
+    border-left: 1px solid transparent !important

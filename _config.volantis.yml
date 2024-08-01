@@ -41,9 +41,9 @@ cdn_system:
     # Tip: 在本配置文件中 匹配以 "volantis-local" 开头的链接路径替换为该格式的前缀开头 prefix
     local:
       # CDN 链接前缀
-      prefix: ${site_root}
+      prefix: https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io@master
       # local CDN 格式
-      format: ${prefix}${file}
+      format: ${prefix}/${file}
     # npm
     # https://www.npmjs.com/
     # Tip: 在本配置文件中 匹配以 "volantis-npm" 开头的链接路径替换为该格式的前缀开头 prefix
@@ -117,6 +117,7 @@ replace:
 dns_prefetch:
   - https://unpkg.com
   - https://cdn.bootcdn.net
+  - https://gcore.jsdelivr.net/gh/
 
 # 平滑滚动效果
 scroll_smooth: true
@@ -320,8 +321,8 @@ article:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar: volantis-static/media/org.volantis/blog/favicon/apple-touch-icon.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
-        name: Spcookie
+        avatar: https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
+        name: 咸小鱼
         url: /
       # 文章创建日期
       date:
@@ -561,9 +562,9 @@ sidebar:
     # blogger info widget
     blogger:
       class: blogger
-      display: [ desktop, mobile ] # [desktop, mobile]
+      display: [desktop] # [desktop, mobile]
       avatar: https://spcookie.oss-cn-hangzhou.aliyuncs.com/avatar-2024-07-25.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-      shape: rectangle # circle, rectangle
+      shape: circle # circle, rectangle
       url: /
       title: 咸小鱼
       subtitle: ٩(•̤̀ᵕ•̤́๑)
@@ -593,7 +594,7 @@ sidebar:
     # music
     music:
       class: music
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [desktop] # [desktop, mobile]
     # ---------------------------------------
     # category widget
     category:
@@ -1277,7 +1278,7 @@ custom_css:
     effect: [] # [shadow, floatable, blur]
     highlight:
       language: true # show language of codeblock
-      grayscale: false # Enable grayscale effect
+      grayscale: true # Enable grayscale effect
     text_align: # left, right, justify, center
       h1: left
       h2: left
@@ -1317,7 +1318,7 @@ custom_css:
     bodyfont:
       fontfamily: '"LXGW WenKai Screen", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'LXGW WenKai Screen'
-      url: /font/LXGWWenKaiMonoScreen.ttf # volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      url: "volantis-local/font/LXGWWenKaiMonoScreen.ttf" # volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal
       style: normal
     codefont:
@@ -1347,7 +1348,7 @@ seo:
 # https://ogp.me/
 # https://hexo.io/zh-cn/docs/helpers#open-graph
 open_graph:
-  image: volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png
+  image: https://spcookie.oss-cn-hangzhou.aliyuncs.com/logo-2024-07-25.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png
   twitter_card: summary # summary_large_image , summary
   #twitter_id:
   #twitter_site:

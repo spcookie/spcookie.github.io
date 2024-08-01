@@ -1,12 +1,13 @@
 ---
 title: Git提交的emoji表情使用指南
+cover: false
 categories: [ 日常随写 ]
 tags: [ git ]
 author: Spcookie
 group: default
 date: 2023/12/18 13:14:00
 updated: 2023/12/18 13:14:00
-comments: false
+comments: true
 readmore: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: CAS单点登录原理
+cover: false
 categories: [ 技术积累 ]
 tags: [ 认证, SSO ]
-author: Spcookie
 group: default
 comments: true
 readmore: false
@@ -75,7 +75,7 @@ CAS Server负责完成对用户的认证工作, 需要独立部署, CAS Server�
 2. app2.example.com发现用户没有登录（没有Cookie: SESSIONID），则返回浏览器重定向地址并且通过get的方式添加参数service，该参数目的是登录成功之后会要重定向回来。
 3. 浏览器发起重定向，因为之前访问过一次了，因此这次会携带上次返回的Cookie：TGC到认证中心。
 4. 认证中心收到请求，发现TGC对应了一个TGT，于是用TGT签发一个ST(ticket)，并且返回给浏览器，让他重定向到app2.example.com。
-5. 浏览器根据返回的网址（app2.example.com?ticket=ST-7-GfpdKd.....）发起重定向。
+5. 浏览器根据返回的网址（app2.example.com?ticket=ST-7-GfpdKd......）发起重定向。
 6. app2.example.com获取ticket去认证中心验证是否有效。
 7. 认证成功。
 8. 创建对应的SESSION，返回Cookie值SESSIONID。
@@ -95,11 +95,11 @@ TGT的存活周期默认为120分钟。
 
 ### ST安全性
 
-ST（ Service Ticket ）是通过HTTP传送的，因此网络中的其他人可以Sniffer到其他人的Ticket 。CAS通过以下几方面来使ST变得更加安全（事实上都是可以配置的）：
+ST（ Service Ticket ）是通过HTTP传送的，因此网络中的其他人可以Sniffer到其他人的Ticket。CAS通过以下几方面来使ST变得更加安全（事实上都是可以配置的）：
 
 1.  ST只能使用一次
 
-CAS协议规定，无论Service Ticket验证是否成功，CAS Server都会清除服务端缓存中的该Ticket ，从而可以确保一个 Service Ticket不被使用两次。
+CAS协议规定，无论Service Ticket验证是否成功，CAS Server都会清除服务端缓存中的该Ticket，从而可以确保一个 Service Ticket不被使用两次。
 
 2.  ST在一段时间内失效
 
