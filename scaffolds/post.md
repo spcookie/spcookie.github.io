@@ -1,14 +1,14 @@
 ---
-title: { title }
+title: {{title}}
 cover: false
-categories: [ ]
-tags: [ ]
-keywords: 
-description: 
+categories: []
+tags: []
+keywords:
+description:
 author: 咸小鱼
 group: default
-date: { data }
-updated: { data }
+date: {{data}}
+updated: {{data}}
 comments: true
 readmore: false
 references:
@@ -25,5 +25,4 @@ plugins:
 ---
 
 <!-- more -->
-
 

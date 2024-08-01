@@ -1278,7 +1278,7 @@ custom_css:
     effect: [] # [shadow, floatable, blur]
     highlight:
       language: true # show language of codeblock
-      grayscale: false # Enable grayscale effect
+      grayscale: true # Enable grayscale effect
     text_align: # left, right, justify, center
       h1: left
       h2: left
