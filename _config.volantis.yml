@@ -737,7 +737,7 @@ site_footer:
     <span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
     <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
   # site copyright
-  copyright: 'Copyright 2023 <i class="fas fa-heartbeat animated faa-vertical" style="color:#f66"></i> Spcookie.' #'[Copyright © since 2017 Spc.](/)'
+  copyright: 'Copyright 2023-2024 <i class="fas fa-heartbeat animated faa-vertical" style="color:#f66"></i> 咸小鱼.' #'[Copyright © since 2017 Spc.](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
   foot: '<p>Modify from <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis">Volantis</a> theme <i class="fa-solid fa-bolt fa-bounce light-blue"></i> Powered by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a></p>'
