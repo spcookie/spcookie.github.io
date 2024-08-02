@@ -41,7 +41,7 @@ cdn_system:
     # Tip: 在本配置文件中 匹配以 "volantis-local" 开头的链接路径替换为该格式的前缀开头 prefix
     local:
       # CDN 链接前缀
-      prefix: https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io@master
+      prefix: '' #https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io@master
       # local CDN 格式
       format: ${prefix}/${file}
     # npm
@@ -137,17 +137,17 @@ navbar:
       icon: fa-solid fa-fan fa-spin PETERRIVE
       rows:
         - name: 分类
-          icon: fa-solid fa-folder-open SUNFLOWER
+          icon: fa-solid fa-code SUNFLOWER
           url: categories/
         - name: 标签
-          icon: fa-solid fa-tags GREENSEA
+          icon: fa-solid fa-hashtag GREENSEA
           url: tags/
         - name: hr
         - name: 归档
           icon: fa-solid fa-archive ALIZARIN
           url: archives/
     - name: 切换 # 可自定义
-      icon: fa-solid fa-moon CARROT # 可自定义
+      icon: fa-solid fa-moon WISTERIA # 可自定义
       toggle: darkmode
     - name: Github
       icon: fa-solid fa-link ALIZARIN
@@ -326,36 +326,35 @@ article:
         url: /
       # 文章创建日期
       date:
-        icon: fa-solid fa-calendar BELIZEHOLE
+        icon: fa-solid fa-calendar WISTERIA
         title: '发布于：'
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章更新日期
       updated:
-        icon: fa-solid fa-calendar-plus BELIZEHOLE  # ALIZARIN
+        icon: fa-solid fa-calendar-plus WISTERIA  # ALIZARIN
         title: '更新于：'
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章分类
       category:
-        icon: fa-solid fa-code BELIZEHOLE # fa-folder-open # SUNFLOWER
+        icon: fa-solid fa-code WISTERIA # fa-folder-open # SUNFLOWER
       # 文章浏览计数
       counter:
-        icon: fa-solid fa-eye BELIZEHOLE
+        icon: fa-solid fa-eye WISTERIA
         unit: '次浏览'
       # waline 文章评论数量
       walinecount:
-        icon: fa-solid fa-comment-dots BELIZEHOLE 
+        icon: fa-solid fa-comment-dots WISTERIA 
         desc: '条评论' # 条评论
       # artalk 文章评论数量
       artalkcount:
-        icon: fa-solid fa-comment-dots BELIZEHOLE 
+        icon: fa-solid fa-comment-dots WISTERIA 
         desc: '条评论' # 条评论
       # 文章字数和阅读时长
       wordcount:
-        icon_wordcount: fa-solid fa-keyboard BELIZEHOLE  # GREENSEA
-        icon_duration: fa-solid fa-hourglass BELIZEHOLE  # ORANGE
-      # 文章标签
+        icon_wordcount: fa-solid fa-keyboard WISTERIA  # GREENSEA
+        icon_duration: fa-solid fa-hourglass WISTERIA
       tags:
-        icon: fa-solid fa-hashtag BELIZEHOLE # GREENSEA
+        icon: fa-solid fa-hashtag WISTERIA # GREENSEA
       # 分享
       share:
         - id: qq
@@ -373,7 +372,7 @@ article:
 
 ############################### Comments ############################### > start
 comments:
-  title: <i class='fa-solid fa-comments NEPHRITIS'></i> 评论
+  title: <i class='fa-solid fa-comments WISTERIA'></i> 评论
   subtitle:
   service: artalk
   # 可选评论系统 #
@@ -551,7 +550,7 @@ comments:
 
 ############################### Sidebar ############################### > start
 sidebar:
-  position: left # left right
+  position: right # left right
   # 主页、分类、归档等独立页面
   for_page: []
   # layout: docs/post 这类文章页面
@@ -573,7 +572,7 @@ sidebar:
         - icon: fa-solid fa-rss
           url: /atom.xml
         - icon: fa-solid fa-envelope
-          url: mailto:1307083930@qq.com
+          url: mailto:spcookie@qq.com
         - icon: fab fa-github
           url: https://github.com/spcookie/
     #   - icon: fa-solid fa-headphones-alt
@@ -585,7 +584,7 @@ sidebar:
       display: [desktop, mobile] # [desktop, mobile]
       sticky: true
       header:
-        icon: fa-solid fa-list NEPHRITIS
+        icon: fa-solid fa-list WISTERIA
         title: 目录
       list_number: true
       min_depth: 2
@@ -602,7 +601,7 @@ sidebar:
       display: [desktop] # [desktop, mobile]
       sticky: true
       header:
-        icon: fa-solid fa-code NEPHRITIS # SUNFLOWER
+        icon: fa-solid fa-code WISTERIA # SUNFLOWER
         title: 分类
         url: /categories/
     # ---------------------------------------
@@ -612,7 +611,7 @@ sidebar:
       display: [desktop] # [desktop, mobile]
       sticky: true
       header:
-        icon: fa-solid fa-hashtag NEPHRITIS # GREENSEA
+        icon: fa-solid fa-hashtag WISTERIA # GREENSEA
         title: 标签
         url: /tags/
       min_font: 14
@@ -636,7 +635,7 @@ sidebar:
       display: [desktop]
       sticky: true
       header:
-        icon: fa-solid fa-award NEPHRITIS
+        icon: fa-solid fa-award WISTERIA
         title: 站点信息
       type:
         article:
@@ -906,7 +905,7 @@ plugins:
   # https://github.com/CodeByZach/pace
   pace:
     enable: true
-    color: green # black, blue, green, orange, pink, purple, red, silver, white, yellow
+    color: purple # black, blue, green, orange, pink, purple, red, silver, white, yellow
     theme: minimal # big-counter, bounce, barber-shop, center-atom, center-circle, center-radar, center-simple, corner-indicator, fill-left, flat-top, flash, loading-bar, mac-osx, material, minimal
 
   # 暗黑模式 darkmode
@@ -1156,17 +1155,17 @@ color_scheme:
   # 通用颜色
   common:
     # 主题色
-    theme: '#27ae60' #'#96B6C5' #'#3dd9b6'
+    theme: '#AD88C6' #'#27ae60' #'#96B6C5' #'#3dd9b6'
     # 链接色
-    link: '#2092ec'
+    link: '#7469B6' #'#2092ec'
     # 按钮色
     button: '#44D7B6'
     # 鼠标放到交互元素上时的色
-    hover: '#ff5722'
+    hover:  '#E1AFD1' #'#ff5722'
     # 主题色块内部的文字颜色
     inner: '#fff'
     # 选中区域文字的背景颜色
-    selection: 'alpha(#2196f3, 0.2)'
+    selection: 'alpha(#FFE6E6, 0.2)'
   # ------------
   # 亮色主题（默认）
   light:
@@ -1187,7 +1186,7 @@ color_scheme:
     # 代码块高亮时的背景色
     codeblock: '#FFF7EA' #'#FFF7EA'
     # 行内代码颜色
-    inlinecode: '#c74f00'
+    inlinecode: '#AD88C6' #'#c74f00'
 
     # 文章部分
     h1: '#3a3a3a'
@@ -1229,7 +1228,7 @@ color_scheme:
     # 代码块高亮时的背景色     # Dark Grey 2
     codeblock: '#1f1f1f'
     # 行内代码颜色
-    inlinecode: '#D56D28'
+    inlinecode: '#AD88C6'
 
     # 文章部分 高强度文本的不透明度应为87％ 中等重点文字适用于60％
     h1: '#FFFFFFde'            #  Dark Grey 8
@@ -1271,7 +1270,7 @@ custom_css:
   navbar:
     height: 64px
     width: auto # auto, max
-    effect: [shadow] # [shadow, floatable, blur]
+    effect: [] # [shadow, floatable, blur]
   sidebar:
     effect: [] # [shadow, floatable, blur]
   body:
