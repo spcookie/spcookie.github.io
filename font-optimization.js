@@ -18,7 +18,7 @@ const fontCachePath = path.join(__dirname, '/source/LXGWWenKaiMonoScreen.ttf');
 const filterRegex = /[\0-\u001F\u007F-\u009F\u2000-\u206F\uFEFF\uFFF0-\uFFFF]/gu;
 
 // 用于存储所有字符的集合, 定义特定的
-let allChars = '胜可折叠';
+let allChars = '胜可折叠昵';
 
 // 递归函数，用于读取文件夹中的所有文件
 function readDirectory(directory) {
