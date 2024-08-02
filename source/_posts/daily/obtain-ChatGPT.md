@@ -6,7 +6,6 @@ tags: [ ai, gpt ]
 comments: true
 keywords:
 description:
-author: Spcookie
 group: default
 date: 2023/12/15 13:14:00
 updated: 2023/12/15 13:14:00

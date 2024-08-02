@@ -2,11 +2,10 @@
 title: Git提交的emoji表情使用指南
 cover: false
 categories: [ 日常随写 ]
-tags: [ git ]
-author: Spcookie
+tags: [ git, emoji ]
 group: default
-date: 2023/12/18 13:14:00
-updated: 2023/12/18 13:14:00
+date: 2023/12/18
+updated: 2024/8/2
 comments: true
 readmore: false
 ---
@@ -15,7 +14,7 @@ GitHub上有一套约定俗成的emoji使用规范，在使用git提交信息的
 
 <!-- more -->
 
-# emoji使用规范
+## emoji使用规范
 
 | emoji            | emoji代码                              | commit说明         |
 |------------------|--------------------------------------|------------------|
