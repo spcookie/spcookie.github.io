@@ -26,9 +26,7 @@ readmore: false
 
 特点：
 
-* **数据保护**
-  ——分布式Minio采用纠删码来防范多个节点宕机和[位衰减](https://baike.baidu.com/item/%E4%BD%8D%E8%A1%B0%E5%87%8F)bit
-  rot。分布式Minio至少需要4个硬盘，使用分布式Minio自动引入了纠删码功能。
+* **数据保护**——分布式Minio采用纠删码来防范多个节点宕机和[位衰减](https://baike.baidu.com/item/%E4%BD%8D%E8%A1%B0%E5%87%8F)bitrot。分布式Minio至少需要4个硬盘，使用分布式Minio自动引入了纠删码功能。
 
 * **高可用**——单机Minio服务存在单点故障，相反，如果是一个有N块硬盘的分布式Minio,只要有N/2硬盘在线，你的数据就是安全的。不过你需要至少有N/2+1个硬盘来创建新的对象。
 
