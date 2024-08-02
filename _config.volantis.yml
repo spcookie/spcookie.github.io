@@ -795,12 +795,12 @@ plugins:
     copy_code: true
     # Please set hexo.config.highlight.enable = false !!! set hexo.config.prismjs.enable = true !!!
     js:
-      - https://unpkg.com/prismjs/components/prism-core.min.js
-      - https://unpkg.com/prismjs/plugins/autoloader/prism-autoloader.min.js
-      - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+      - volantis-npm/prismjs/components/prism-core.min.js
+      - volantis-npm/prismjs/plugins/autoloader/prism-autoloader.min.js
+      - volantis-npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
     css:
-      - https://unpkg.com/prismjs/themes/prism-tomorrow.min.css
-      - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.min.css
+      - volantis-npm/prismjs/themes/prism-tomorrow.min.css
+      - volantis-npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css
 
   # https://scrollrevealjs.org/api/reveal.html
   scrollreveal:
