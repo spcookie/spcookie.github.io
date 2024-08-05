@@ -1368,9 +1368,9 @@ structured_data:
   data:
     person:
       sns:
-        - https://github.com/volantis-x
+        - https://github.com/spcookie
     logo:
-      path: volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png
-      width: 192
-      height: 192
+      path: https://spcookie.oss-cn-hangzhou.aliyuncs.com/logo-2024-07-25.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png
+      width: 248
+      height: 248
 ############################### Structured Data ############################### > end

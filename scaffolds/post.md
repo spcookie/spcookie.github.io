@@ -11,6 +11,7 @@ date: {{data}}
 updated: {{data}}
 comments: true
 readmore: false
+icons:
 references:
     - title: 某篇文章
       url: https://

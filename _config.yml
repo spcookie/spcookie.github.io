@@ -14,7 +14,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://spcookie.github.io
+url: https://www.spcookie.top # https://spcookie.github.io
 permalink: posts/:hash/ #:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -107,21 +107,55 @@ theme: volantis
 # Search
 jsonContent:
   meta: true
+  drafts: false
+  file: content.json
   keywords: french
   dateFormat: YYYY-MM-DD
+  pages:
+    title: true
+    slug: true
+    date: true
+    updated: true
+    comments: true
+    path: true
+    link: true
+    permalink: true
+    excerpt: true
+    keywords: false
+    text: true
+    raw: false
+    content: false
+    author: true
+  posts:
+    title: true
+    slug: true
+    date: true
+    updated: true
+    comments: true
+    path: true
+    link: true
+    permalink: true
+    excerpt: true
+    keywords: false
+    text: true
+    raw: false
+    content: false
+    author: true
+    categories: true
+    tags: true
 
 # Rss
 feed:
   enable: true
   type: atom
   path: atom.xml
-  limit: 20
+  limit: false
   hub:
   content:
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
-  icon: icon.png
+  icon: 
   autodiscovery: true
   template:
 
@@ -132,6 +166,7 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
   # options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
   # startOnload: true  // default true
 
+# markdown-it
 markdown:
   preset: 'default'
   render:
@@ -142,8 +177,8 @@ markdown:
     linkify: false
     typographer: true
     quotes: '“”‘’'
-  # enable_rules:
-  # disable_rules:
+  enable_rules:
+  disable_rules:
   plugins:
     - markdown-it-abbr
     - markdown-it-attrs
@@ -173,8 +208,17 @@ markdown:
     case: 0
     # Replace space with a character
     separator: '-'
-  # images:
-  #   lazyload: false
-  #   prepend_root: false
-  #   post_asset: false
-  # inline: false  # https://markdown-it.github.io/markdown-it/#MarkdownIt.renderInline
+  images:
+    lazyload: false
+    prepend_root: false
+    post_asset: false
+  inline: false  # https://markdown-it.github.io/markdown-it/#MarkdownIt.renderInline
+
+# sitemap
+sitemap:
+  path: sitemap.xml
+
+# Adds nofollow attribute to all external links in your hexo blog posts automatically
+nofollow:
+  enable: true
+  exclude:
