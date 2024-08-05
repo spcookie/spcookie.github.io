@@ -13,13 +13,17 @@ updated: 2023/9/21 13:15:00
 readmore: false
 ---
 
-# MinIO学习笔记
+收藏两篇文档
+
+<!-- more -->
+
+## MinIO学习笔记
 
 * 👉[中文文档（有点过时了）](https://minio.org.cn/index4.shtml)
 
 * 👉[官方文档（部分中文）](https://www.minio.org.cn/docs/minio/linux/index.html)
 
-## 概述
+### 概述
 
 > `MinIO` 是在 `GNU Affero` 通用公共许可证 v3.0 下发布的**高性能对象存储**。它与 Amazon S3 云存储服务 API 兼容。使用 MinIO
 > 为机器学习、分析和应用程序数据工作负载构建高性能基础架构。
@@ -43,7 +47,7 @@ MinIO的优点如下：
 
 * **读写性能优异**
 
-## MinIO 基础概念
+### MinIO 基础概念
 
 * `S3`——Simple Storage Service，简单存储服务，这个概念是Amazon在2006年推出的，对象存储就是从那个时候诞生的。S3提供了一个简单Web服务接口，可用于随时在Web上的任何位置存储和检索任何数量的数据。
 
@@ -63,13 +67,13 @@ MinIO的优点如下：
 
     * 一个SET中的Drive尽可能分布在不同的节点上。
 
-## Set /Drive 的关系
+### Set /Drive 的关系
 
 * Set /Drive 这两个概念是 MINIO 里面最重要的两个概念，一个对象最终是存储在 Set 上面的。
 
 * Set 是另外一个概念，Set 是一组 Drive 的集合。
 
-## 纠删码（Erasure Code）
+### 纠删码（Erasure Code）
 
 > 纠删码（Erasure Code）简称EC，是一种数据保护方法，它将数据分割成片段，把冗余数据块扩展、编码，并将其存储在不同的位置，比如磁盘、存储节点或者其它地理位置。
 

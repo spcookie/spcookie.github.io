@@ -16,21 +16,22 @@ copyright:
   author: 未知
 ---
 
+整理两篇Gradle kotlin DSL学习笔记
+
+<!-- more -->
+
 ## Gradle的特点
 
-1.
-Gradle构建脚本采用Groovy或Kotlin语言编写，如果采用Groovy编写，构建脚本后缀为.gradle，在里面可以使用Groovy语法，如果采用Kotlin编写，构建脚本后缀为.gradle.kts，在里面可以使用Kotlin语法。
+1. Gradle构建脚本采用Groovy或Kotlin语言编写，如果采用Groovy编写，构建脚本后缀为.gradle，在里面可以使用Groovy语法，如果采用Kotlin编写，构建脚本后缀为.gradle.kts，在里面可以使用Kotlin语法。
 
-2.
-因为Groovy或Kotlin都是面向对象语言，所以在Gradle中处处皆对象，Gradle的.gradle或.gradle.kts脚本本质上是一个Project对象，在脚本中一些带名字的配置项如buildscript、allprojects等本质上就是对象中的方法，而配置项后面的闭包`{}`
+2. 因为Groovy或Kotlin都是面向对象语言，所以在Gradle中处处皆对象，Gradle的.gradle或.gradle.kts脚本本质上是一个Project对象，在脚本中一些带名字的配置项如buildscript、allprojects等本质上就是对象中的方法，而配置项后面的闭包`{}`
 就是参数，所以我们在使用这个配置项时本质上是在调用对象中的一个方法。
 
 3. 在Groovy或Kotlin中，函数和类一样都是一等公民，它们都提供了很好的闭包`{}`
    支持，所以它们很容易的编写出具有[DSL](https://link.juejin.cn?target=https%3A%2F%2Fzh.wikipedia.org%2Fwiki%2F%25E9%25A2%2586%25E5%259F%259F%25E7%2589%25B9%25E5%25AE%259A%25E8%25AF%25AD%25E8%25A8%2580)
    风格的代码，用DSL编写构建脚本的Gradle比其他采用xml编写构建脚本的构建工具如maven、Ant等的可读性更强，动态性更好，整体更简洁。
 
-4.
-Gradle中主要有Project和Task对象，Project是Gradle中构建脚本的表示，一个构建脚本对应一个Project对象，Task是Gradle中最小的执行单元，它表示一个独立的任务，Project为Task提供了执行的上下。
+4. Gradle中主要有Project和Task对象，Project是Gradle中构建脚本的表示，一个构建脚本对应一个Project对象，Task是Gradle中最小的执行单元，它表示一个独立的任务，Project为Task提供了执行的上下。
 
 ## Gradle项目包含的文件
 
@@ -45,12 +46,9 @@ Gradle中主要有Project和Task对象，Project是Gradle中构建脚本的表�
 ### Gradle Wrapper
 
 `gradle init`
-执行时会同时执行wrapper任务，wrapper任务会创建gradle/wrapper目录，并创建gradle/wrapper目录下的gradle-wrapper.jar、gradle-wrapper.properties这两个文件，还同时创建gradlew、gradlew.bat这两个脚本，它们统称为Gradle
-Wrapper，是对Gradle的一层包装。
+执行时会同时执行wrapper任务，wrapper任务会创建gradle/wrapper目录，并创建gradle/wrapper目录下的gradle-wrapper.jar、gradle-wrapper.properties这两个文件，还同时创建gradlew、gradlew.bat这两个脚本，它们统称为Gradle Wrapper，是对Gradle的一层包装。
 
-Gradle Wrapper的作用就是可以让**你的电脑在不安装配置Gradle环境**的前提下运行Gradle项目，通过Gradle构建项目时，Gradle
-Wrapper就会从指定下载位置下载Gradle，并解压到电脑的指定位置，在Gradle项目的命令行中运行gradlew或gradlew.bat脚本来使用gradle命令，要运行gradle
--v命令，在linux平台下只需要运行`./gradlew -v`，在window平台下只需要运行`gradlew -v`，只是把`gradle`替换成`gradlew`。
+Gradle Wrapper的作用就是可以让**你的电脑在不安装配置Gradle环境**的前提下运行Gradle项目，通过Gradle构建项目时，Gradle Wrapper就会从指定下载位置下载Gradle，并解压到电脑的指定位置，在Gradle项目的命令行中运行gradlew或gradlew.bat脚本来使用gradle命令，要运行gradle-v命令，在linux平台下只需要运行`./gradlew -v`，在window平台下只需要运行`gradlew -v`，只是把`gradle`替换成`gradlew`。
 
 Gradle Wrapper的每个文件含义如下：
 
@@ -64,13 +62,13 @@ Gradle Wrapper的每个文件含义如下：
 
 gradle-wrapper.properties中各个字段解释如下：
 
-| 字段名              | 解释                                                                                                                                          |
-|------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| distributionBase | 下载的Gradle的压缩包解压后的主目录，为GRADLE\_USER\_HOME，在window中它表示**C:/用户/你电脑登录的用户名/.gradle/**，在mac中它表示**～/.gradle/**                                     |
-| distributionPath | 相对于distributionBase的解压后的Gradle的路径，为wrapper/dists                                                                                            |
+| 字段名           | 解释                                                                                                                                                                                  |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| distributionBase | 下载的Gradle的压缩包解压后的主目录，为GRADLE_USER_HOME，在window中它表示**C:/用户/你电脑登录的用户名/.gradle/**，在mac中它表示**～/.gradle/**                                         |
+| distributionPath | 相对于distributionBase的解压后的Gradle的路径，为wrapper/dists                                                                                                                         |
 | distributionUrl  | Grade压缩包的下载地址，在这里可以修改下载的Gradle的版本和版本类型(binary或complete)，例如gradle-6.5-all.zip表示Gradle 6.5的complete版本，gradle-6.5-bin.zip表示Gradle 6.5的binary版本 |
-| zipStoreBase     | 同distributionBase，不过是表示存放下载的Gradle的压缩包的主目录                                                                                                  |
-| zipStorePath     | 同distributionPath，不过是表示存放下载的Gradle的压缩包的路径                                                                                                   |
+| zipStoreBase     | 同distributionBase，不过是表示存放下载的Gradle的压缩包的主目录                                                                                                                        |
+| zipStorePath     | 同distributionPath，不过是表示存放下载的Gradle的压缩包的路径                                                                                                                          |
 
 ## Gradle的多项目配置
 
@@ -99,9 +97,7 @@ includ("subproject-2")
 includ("subproject-3")
 ```
 
-配置多项目时，Gradle的Project接口为我们提供了`allprojects`和`subprojects`
-方法，在根项目的build.gradle中使用这两个方法可以全局的为所有子项目进行配置，`allprojects`和`subprojects`
-的区别是：`allprojects`的配置包括根项目而`subprojects`的配置不包括根项目。
+配置多项目时，Gradle的Project接口为我们提供了`allprojects`和`subprojects`方法，在根项目的build.gradle中使用这两个方法可以全局的为所有子项目进行配置，`allprojects`和`subprojects`的区别是：`allprojects`的配置包括根项目而`subprojects`的配置不包括根项目。
 
 ```kotlin
 //根项目的build.gradle.kts
@@ -223,17 +219,13 @@ val copy by tasks.registering(Copy::class) {
 
 其中`doFirst`方法会在Task的action执行前执行，`doLast`方法会在Task的action执行后执行，而`action`就是Task的执行单元，在后面自定义Task说明。
 
-上面通过Project的`register`和`create`方法创建的Task默认被放在Project的`TaskContainer`
-类型的容器中，我们可以通过Project的`getTasks`方法获取到这个容器。
+上面通过Project的`register`和`create`方法创建的Task默认被放在Project的`TaskContainer`类型的容器中，我们可以通过Project的`getTasks`方法获取到这个容器。
 
 > **register与create的区别**
->
 > 通过`register`创建时，只有在这个task被需要时才会真正创建与配置该Task（被需要是指在本次构建中需要执行该Task）
->
 > 通过`create`创建时，则会立即创建与配置该Task。
 
-创建Task之后，就可以执行它，执行一个Task只需要把task名称接在`gradle`命令后。如果要执行多个Task，多个task名称接在`gradle`
-命令后用空格隔开就行。
+创建Task之后，就可以执行它，执行一个Task只需要把task名称接在`gradle`命令后。如果要执行多个Task，多个task名称接在`gradle`命令后用空格隔开就行。
 
 ### 查找Task
 
@@ -250,8 +242,7 @@ tasks.withType()
 
 ### 配置Task
 
-Gradle为每个Task定义了默认的属性Property， 比如`description`、`group`、`dependsOn`、`inputs`、`outputs`等,
-我们可以配置这些Property。Gradle在执行一个Task之前，会先配置这个Task的Property，然后再执行这个Task的执行代码块，所以配置Task的代码块放在哪里都无所谓。
+Gradle为每个Task定义了默认的属性Property， 比如`description`、`group`、`dependsOn`、`inputs`、`outputs`等，我们可以配置这些Property。Gradle在执行一个Task之前，会先配置这个Task的Property，然后再执行这个Task的执行代码块，所以配置Task的代码块放在哪里都无所谓。
 
 ```kotlin
 // 在查找到Task之后进行配置
@@ -304,13 +295,13 @@ val taskX by tasks.registering {
         println("taskX")
     }
 }
- 
+
 val taskY by tasks.registering {
     doLast {
         println("taskY")
     }
 }
- 
+
 taskX {
     dependsOn(taskY)
 }
@@ -357,7 +348,7 @@ val hello by tasks.registering {
         println("hello world")
     }
 }
- 
+
 hello {
     onlyIf { !project.hasProperty("skipHello") }
 }
@@ -373,7 +364,7 @@ val compile by tasks.registering {
         println("We are doing the compile.")
     }
 }
- 
+
 compile {
     doFirst {
         // Here you would put arbitrary conditions in real life.
@@ -401,7 +392,7 @@ val disableMe by tasks.registering {
         println("This should not be printed if the task is disabled.")
     }
 }
- 
+
 disableMe {
     enabled = false
 }
@@ -435,10 +426,7 @@ class MyTask: DefaultTask {
 }
 ```
 
-在MyTask中，通过`@TaskAction`
-注解的方法就是该Task的action，action是Task最主要的组成，它表示Task的一个执行动作，当Task中有多个action时，多个action的执行顺序按照`@TaskAction`
-注解的方法的放置逆顺序，所以执行一个Task的过程就是：doFirst方法 -> action方法 ->
-doLast方法，在MyTask中定义了两个action，接下来我们使用这个Task，如下：
+在MyTask中，通过`@TaskAction`注解的方法就是该Task的action，action是Task最主要的组成，它表示Task的一个执行动作，当Task中有多个action时，多个action的执行顺序按照`@TaskAction`注解的方法的放置逆顺序，所以执行一个Task的过程就是：doFirst方法 -> action方法 -> doLast方法，在MyTask中定义了两个action，接下来我们使用这个Task，如下：
 
 ```kotlin
 tasks.create("myTask") {
@@ -450,8 +438,7 @@ tasks.create("myTask") {
 
 ## Task支持增量编译
 
-增量式构建就是**当Task的输入和输出没有变化时，跳过action的执行，当Task输入或输出发生变化时，在action中只对发生变化的输入或输出进行处理
-**，这样就可以避免一个没有变化的Task被反复构建，还有当Task发生变化时只处理变化部分，这样就会提高整个Gradle的构建效率，大大缩短整个Gradle的构建时间。
+增量式构建就是**当Task的输入和输出没有变化时，跳过action的执行，当Task输入或输出发生变化时，在action中只对发生变化的输入或输出进行处理**，这样就可以避免一个没有变化的Task被反复构建，还有当Task发生变化时只处理变化部分，这样就会提高整个Gradle的构建效率，大大缩短整个Gradle的构建时间。
 
 让Task支持增量式构建只需要做到两步：
 
@@ -469,23 +456,21 @@ tasks.create("myTask") {
 
 * 自定义类型：自定义类型是指自己定义的类，这个类含有Task的部分输入和输出属性，或者说任务的部分输入和输出属性嵌套在这个类中.
 
-我们可以在自定义Task时通过**注解**
-指定Task的inputs和outputs，通过注解指定的inputs和outputs会参与Gradle的Up-to-date检查，它是编写增量式Task的前提，Up-to-date检查是指Gradle每次执行Task前都会检查Task的输入和输出，如果一个Task的输入和输出自上一次构建以来没有发生变化，Gradle就判定这个Task是可以跳过执行的，这时你就会看到Task构建旁边会有一个
-**UP-TO-DATE**文本，Gradle提供了很多注解让我们指定Task的inputs和outputs，**常用**的如下：
+我们可以在自定义Task时通过**注解**指定Task的inputs和outputs，通过注解指定的inputs和outputs会参与Gradle的Up-to-date检查，它是编写增量式Task的前提，Up-to-date检查是指Gradle每次执行Task前都会检查Task的输入和输出，如果一个Task的输入和输出自上一次构建以来没有发生变化，Gradle就判定这个Task是可以跳过执行的，这时你就会看到Task构建旁边会有一个**UP-TO-DATE**文本，Gradle提供了很多注解让我们指定Task的inputs和outputs，**常用**的如下：
 
-| 注解&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                                      | 对应的类型                      | 含义                                                                                                                                |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| @[Input](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInput.html)                         | 可序列化类型                     | 指单个输入可序列化的值，如基本类型int、string或者实现了Serializable的类                                                                                    |
-| @[InputFile](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInputFile.html)                 | 文件类型                       | 指单个输入文件，不表示文件夹，如File、RegularFile等                                                                                                 |
-| @[InputDirectory](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInputDirectory.html)       | 文件类型                       | 指单个输入文件夹，不表示文件，如File、Directory等                                                                                                   |
-| @[InputFiles](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInputFiles.html)               | 文件类型                       | 指多个输入的文件或文件夹，如FileCollection、FileTree等                                                                                            |
-| @[OutputFile](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOutputFile.html)               | 文件类型                       | 指单个输出文件，不表示文件夹，如File、RegularFile等                                                                                                 |
-| @[OutputDirectory](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOutputDirectory.html)     | 文件类型                       | 指单个输出文件夹，不表示文件，如File、Directory等                                                                                                   |
-| @[OutputFiles](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOutputFiles.html)             | 文件类型                       | 指多个输出的文件，如FileCollection、Map等                                                                                                     |
-| @[OutputDirectories](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOutputDirectories.html) | 文件类型                       | 指多个输出的文件夹，如FileCollection、Map等                                                                                                    |
-| @[Nested](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FNested.html)                       | 自定义类型                      | 指一种自定义的类，这个类它可能没有实现Serializable，但这个类里面至少有一个属性使用本表中的一个注解标记，即这个类会含有Task的输入或输出                                                       |
-| @[Internal](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInternal.html)                   | 任何类型                       | 它可以用在可序列化类型、文件类型、还有自定义类型上，它指该属性只在Task的内部使用，即不是Task的输入也不是Task的输出，通过@Internal注解的属性不参与Up-to-date检查                                   |
-| @[Optional](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOptional.html)                   | 任何类型                       | 它可以用在可序列化类型、文件类型、还有自定义类型上，它指该属性是可选的，通过@Optional注解的属性可以不为它赋值，关闭校验                                                                  |
+| 注解                                                                                                                                                        | 对应的类型                   | 含义                                                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| @[Input](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInput.html)                         | 可序列化类型                 | 指单个输入可序列化的值，如基本类型int、string或者实现了Serializable的类                                                                                                                  |
+| @[InputFile](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInputFile.html)                 | 文件类型                     | 指单个输入文件，不表示文件夹，如File、RegularFile等                                                                                                                                      |
+| @[InputDirectory](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInputDirectory.html)       | 文件类型                     | 指单个输入文件夹，不表示文件，如File、Directory等                                                                                                                                        |
+| @[InputFiles](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInputFiles.html)               | 文件类型                     | 指多个输入的文件或文件夹，如FileCollection、FileTree等                                                                                                                                   |
+| @[OutputFile](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOutputFile.html)               | 文件类型                     | 指单个输出文件，不表示文件夹，如File、RegularFile等                                                                                                                                      |
+| @[OutputDirectory](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOutputDirectory.html)     | 文件类型                     | 指单个输出文件夹，不表示文件，如File、Directory等                                                                                                                                        |
+| @[OutputFiles](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOutputFiles.html)             | 文件类型                     | 指多个输出的文件，如FileCollection、Map等                                                                                                                                                |
+| @[OutputDirectories](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOutputDirectories.html) | 文件类型                     | 指多个输出的文件夹，如FileCollection、Map等                                                                                                                                              |
+| @[Nested](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FNested.html)                       | 自定义类型                   | 指一种自定义的类，这个类它可能没有实现Serializable，但这个类里面至少有一个属性使用本表中的一个注解标记，即这个类会含有Task的输入或输出                                                   |
+| @[Internal](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FInternal.html)                   | 任何类型                     | 它可以用在可序列化类型、文件类型、还有自定义类型上，它指该属性只在Task的内部使用，即不是Task的输入也不是Task的输出，通过@Internal注解的属性不参与Up-to-date检查                          |
+| @[Optional](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FOptional.html)                   | 任何类型                     | 它可以用在可序列化类型、文件类型、还有自定义类型上，它指该属性是可选的，通过@Optional注解的属性可以不为它赋值，关闭校验                                                                  |
 | @[Incremental](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fwork%2FIncremental.html)                    | Provider 或者 FileCollection | 它和@InputFiles或@InputDirectory一起使用，它用来指示Gradle跟踪文件属性的更改，通过@Incremental注解的文件属性可以通过InputChanges的getFileChanges方法查询文件的更改，帮助实现增量构建Task |
 | @[SkipWhenEmpty](https://link.juejin.cn?target=https%3A%2F%2Fdocs.gradle.org%2Fcurrent%2Fjavadoc%2Forg%2Fgradle%2Fapi%2Ftasks%2FSkipWhenEmpty.html)         | Provider 或者 FileCollection | 它和@InputFiles或@InputDirectory一起使用，它用来指示Gradle跟踪文件属性的更改，通过@Incremental注解的文件属性可以通过InputChanges的getFileChanges方法查询文件的更改，帮助实现增量构建Task |
 
@@ -637,11 +622,11 @@ taskY将在taskX之后执行，需要注意的是finalizedBy并不是依赖关�
 
 Plugin可以理解为一系列Task的集合，通过实现Plugin接口的apply方法就可以自定义Plugin，自定义的Plugin本质上也是一个类，所以和Task类似，在Gradle中也提供了3种方式来编写自定义Plugin：
 
-1、在build.gradle中直接编写：可以在任何一个build.gradle文件中编写自定义Plugin，此方式自定义的Plugin只对该build.gradle对应的项目可见；
+1. 在build.gradle中直接编写：可以在任何一个build.gradle文件中编写自定义Plugin，此方式自定义的Plugin只对该build.gradle对应的项目可见；
 
-2、在buildSrc目录下编写：可以在Gradle项目根目录的buildSrc/src/main/\[java/kotlin/groovy\]目录中编写自定义Plugin，可以采用java、kotlin、groovy三种语句之一，Gradle在构建时会自动的编译buildSrc/src/main/\[java/kotlin/groovy\]目录下的所有类文件为class文件，供本项目所有的build.gradle引用，所以此方式自定义的Plugin只对本Gradle项目可见；
+2. 在buildSrc目录下编写：可以在Gradle项目根目录的buildSrc/src/main/\[java/kotlin/groovy\]目录中编写自定义Plugin，可以采用java、kotlin、groovy三种语句之一，Gradle在构建时会自动的编译buildSrc/src/main/\[java/kotlin/groovy\]目录下的所有类文件为class文件，供本项目所有的build.gradle引用，所以此方式自定义的Plugin只对本Gradle项目可见；
 
-3、在独立项目中编写：可以新建一个Gradle项目，在该Gradle项目中编写自定义Plugin，然后把Plugin源码打包成jar，发布到maven、lvy等托管平台上，这样其他项目就可以引用该插件，所以此方式自定义的Plugin对所有Gradle项目可见。
+3. 在独立项目中编写：可以新建一个Gradle项目，在该Gradle项目中编写自定义Plugin，然后把Plugin源码打包成jar，发布到maven、lvy等托管平台上，这样其他项目就可以引用该插件，所以此方式自定义的Plugin对所有Gradle项目可见。
 
 在buildSrc/src/main/kotlin/io.example.plugin下创建build.gradle.kts：
 
@@ -692,8 +677,7 @@ jar {
 }
 ```
 
-它并不是一个名为jar的方法，它而是java插件中名为jar的扩展，该扩展对应一个bean类，该bean类中有enable、group等方法，所以配置jar就是在配置jar对应的bean类。MyPlugin也定义了一个bean类：OuterExt，该bean类有messag字段，Groovy会自动为我们生成messag的get/set方法，而apply方法中通过project实例的ExtensionContainer的create方法创建一个名为outerExt的扩展，扩展对应的bean类为OuterExt，扩展的名字可以随便起，其中ExtensionContainer类似于TaskContainer，它也是Project中的一个容器，这个容器存放Project中所有的扩展，通过ExtensionContainer的
-**create**方法可以创建一个扩展，create方法返回的是扩展对应的类的实例。
+它并不是一个名为jar的方法，它而是java插件中名为jar的扩展，该扩展对应一个bean类，该bean类中有enable、group等方法，所以配置jar就是在配置jar对应的bean类。MyPlugin也定义了一个bean类：OuterExt，该bean类有messag字段，Groovy会自动为我们生成messag的get/set方法，而apply方法中通过project实例的ExtensionContainer的create方法创建一个名为outerExt的扩展，扩展对应的bean类为OuterExt，扩展的名字可以随便起，其中ExtensionContainer类似于TaskContainer，它也是Project中的一个容器，这个容器存放Project中所有的扩展，通过ExtensionContainer的**create**方法可以创建一个扩展，create方法返回的是扩展对应的类的实例。
 
 ```kotlin
 plugins {

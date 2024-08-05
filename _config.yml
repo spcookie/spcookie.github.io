@@ -131,3 +131,50 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
   version: "10.4.0" # default v7.1.2
   # options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
   # startOnload: true  // default true
+
+markdown:
+  preset: 'default'
+  render:
+    html: true
+    xhtmlOut: false
+    langPrefix: 'language-'
+    breaks: false
+    linkify: false
+    typographer: true
+    quotes: '“”‘’'
+  # enable_rules:
+  # disable_rules:
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-attrs
+    - markdown-it-deflist
+    - markdown-it-emoji
+    - markdown-it-footnote
+    - markdown-it-sub
+    - markdown-it-sup
+    # - markdown-it-cjk-breaks
+    # - markdown-it-container
+    # - markdown-it-mark
+    # - markdown-it-ins
+  anchors:
+    # Minimum level for ID creation. (Ex. h2 to h6)
+    level: 2
+    # A suffix that is prepended to the number given if the ID is repeated.
+    collisionSuffix: v
+    # If `true`, creates an anchor tag with a permalink besides the heading.
+    permalink: true
+    # Class used for the permalink anchor tag.
+    permalinkClass: header-anchor
+    # Set to 'right' to add permalink after heading
+    permalinkSide: right
+    # The symbol used to make the permalink
+    permalinkSymbol: ¶
+    # Transform anchor to (1) lower case; (2) upper case
+    case: 0
+    # Replace space with a character
+    separator: '-'
+  # images:
+  #   lazyload: false
+  #   prepend_root: false
+  #   post_asset: false
+  # inline: false  # https://markdown-it.github.io/markdown-it/#MarkdownIt.renderInline
