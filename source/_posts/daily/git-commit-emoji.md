@@ -16,8 +16,6 @@ GitHub上有一套约定俗成的emoji使用规范，在使用git提交信息的
 
 ## emoji使用规范
 
-测试 {#cs class="color:red;"}
-
 表格整理
 
 | emoji                  | emoji代码                     | commit说明                 |

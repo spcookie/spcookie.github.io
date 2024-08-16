@@ -2,7 +2,7 @@
 title: Linux常用命令手册
 cover: false
 categories: [ 手册 ]
-tags: [ linux, 命令 ]
+tags: [ Linux, 命令 ]
 group: default
 date: 2024-8-1
 updated: 2024-8-2
