@@ -280,7 +280,7 @@ MyList listMock = mock(MyList.class, new CustomAnswer());
 **MockSettings**
 如果我们不对方法设置期望值，`CustomAnswer` 类型配置的默认 *answer* 就会发挥作用。
 
-4. 
+4. **MockSettings**
 
 最后一个 mock 方法是带有 `MockSettings` 参数的重载方法。我们使用这个重载方法来提供一个非标准的 mock 。
 
@@ -414,7 +414,7 @@ when(obj).notify();
 
 > Mockito Verify 方法用于检查是否发生了某些行为。我们可以在测试方法代码的末尾使用 Mockito 验证方法，以确保调用了指定的方法。
 
-1. **在模拟列表对象上仅调用一次add（"Pankaj"）**
+1. **在模拟列表对象上仅调用一次add("Pankaj")**
 
 ```java
 @Test
@@ -426,13 +426,13 @@ void test() {
 }
 ```
 
-与通过verify方法使用times（1）参数调用相同
+与通过verify方法使用times(1)参数调用相同
 
 ```java
 verify(mockList, times(1)).size();
 ```
 
-2. **验证调用次数**
+1. **验证调用次数**
 
 ```java
 verify(mockList, times(1)).size(); //same as normal verify method
