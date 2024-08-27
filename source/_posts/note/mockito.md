@@ -490,3 +490,184 @@ inOrder.verify(mockedList).size();
 inOrder.verify(mockedList).add("a parameter");
 inOrder.verify(mockedList).clear();
 ```
+
+## Argument Matcher
+
+我们可以以多种方式配置 mocked 方法。一种选择是返回固定值：
+
+```java
+doReturn("Flower").when(flowerService).analyze("poppy");
+```
+
+在上面的例子中，只有当 `FlowerService` 的 `analyze` 方法接收到字符串"poppy"时，才会返回字符串"Flower"。
+
+然而，有时可能需要对更广泛的值或未知值做出响应。
+
+在这种情况下，我们可以通过**参数匹配器**来配置我们的 mocked 方法：
+
+```java
+when(flowerService.analyze(anyString())).thenReturn("Flower");
+```
+
+现在，由于使用了 anyString 参数匹配器，无论我们传递什么值给 analyze 方法，结果都会相同。ArgumentMatchers 使我们能够灵活地进行验证或模拟。
+
+如果一个方法有多个参数，我们不能只对其中一些参数使用 `ArgumentMatchers` 。Mockito 要求我们为所有参数提供匹配器或确切的值。
+
+以下是一个不正确的示例：
+
+```java
+when(flowerService.isABigFlower("poppy", anyInt())).thenReturn(true);
+```
+
+要解决这个问题，并保持字符串名称"poppy"，我们将使用 eq matcher：
+
+```java
+when(flowerService.isABigFlower(eq("poppy"), anyInt())).thenReturn(true);
+```
+
+当我们使用匹配器时，还有两点需要注意：
+
+- **我们不能用它们作为返回值**；在模拟调用时，我们需要确切的值。
+- **我们不能在验证或模拟之外使用参数匹配器**。
+
+根据第二点，Mockito 会检测到参数放置不当，并抛出 `InvalidUseOfMatchersException` 异常。
+
+一个不好的例子是：
+
+```java
+flowerController.isAFlower("poppy");
+
+String orMatcher = or(eq("poppy"), endsWith("y"));
+assertThrows(InvalidUseOfMatchersException.class, () -> verify(flowerService).analyze(orMatcher));
+```
+
+## 定制 Argument Matcher
+
+实现一个自定义参数匹配器：
+
+```java
+public class MessageMatcher implements ArgumentMatcher<Message> {
+
+    private Message left;
+
+    // constructors
+
+    @Override
+    public boolean matches(Message right) {
+        return left.getFrom().equals(right.getFrom()) &&
+          left.getTo().equals(right.getTo()) &&
+          left.getText().equals(right.getText()) &&
+          right.getDate() != null &&
+          right.getId() != null;
+    }
+}
+```
+
+使用我们的匹配器：
+
+```java
+MessageDTO messageDTO = new MessageDTO();
+messageDTO.setFrom("me");
+messageDTO.setTo("you");
+messageDTO.setText("Hello, you!");
+
+messageController.createMessage(messageDTO);
+
+Message message = new Message();
+message.setFrom("me");
+message.setTo("you");
+message.setText("Hello, you!");
+
+verify(messageService, times(1)).deliverMessage(argThat(new MessageMatcher(message)));
+```
+
+## ArgumentCaptor
+
+> ArgumentCaptor 允许我们捕获传递给方法的参数以进行检查。**当我们在测试中无法访问方法外部的参数时，这特别有用**。
+
+例如，考虑一个名为 `EmailService` 的类，它有一个 `send` 方法，我们希望对其进行测试：
+
+```java
+public class EmailService {
+
+    private DeliveryPlatform platform;
+
+    public EmailService(DeliveryPlatform platform) {
+        this.platform = platform;
+    }
+
+    public void send(String to, String subject, String body, boolean html) {
+        Format format = Format.TEXT_ONLY;
+        if (html) {
+            format = Format.HTML;
+        }
+        Email email = new Email(to, subject, body);
+        email.setFormat(format);
+        platform.deliver(email);
+    }
+
+    ...
+}
+```
+
+在 `EmailService.send` 中，注意 `platform.deliver` 接受一个新的 `Email` 作为参数。在测试中，我们想检查新 `Email` 的 format 字段是否设置为 `Format.HTML`。为此，我们需要捕获并检查传递给 `platform.deliver` 的参数。
+
+1. 设置单元测试
+
+创建我们的单元测试类：
+
+```java
+@ExtendWith(MockitoExtension.class)
+class EmailServiceUnitTest {
+
+    @Mock
+    DeliveryPlatform platform;
+
+    @InjectMocks
+    EmailService emailService;
+
+    ...
+}
+```
+
+2. 添加 ArgumentCaptor 字段
+
+添加一个新的Email类型的ArgumentCaptor字段来存储捕获的参数：
+
+```java
+@Captor
+ArgumentCaptor<Email> emailCaptor;
+```
+
+3. 捕获参数
+
+使用 `verify()` 与 `ArgumentCaptor` 捕获 `Email`：
+
+```java
+verify(platform).deliver(emailCaptor.capture());
+```
+
+我们可以获取捕获的值，并将其存储为新的 `Email` 对象：
+
+```java
+Email emailCaptorValue = emailCaptor.getValue();
+```
+
+4. 检查捕获的值
+
+带有断言来检查捕获的 `Email` 对象：
+
+```java
+@Test
+void whenDoesSupportHtml_expectHTMLEmailFormat() {
+    String to = "[email protected]";
+    String subject = "Using ArgumentCaptor";
+    String body = "Hey, let'use ArgumentCaptor";
+
+    emailService.send(to, subject, body, true);
+
+    verify(platform).deliver(emailCaptor.capture());
+    Email value = emailCaptor.getValue();
+    assertThat(value.getFormat()).isEqualTo(Format.HTML);
+}
+```
