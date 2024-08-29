@@ -308,7 +308,7 @@ MyList listMock = mock(MyList.class, customSettings);
 - 当我们连续两次为同一个方法使用 stub 的时候，他只会只用最新的一次。
 {% endnoteblock %}
 
-以MyList类为例：
+以 `MyList` 类为例：
 
 ```java
 public class MyList extends AbstractList<String> {
@@ -414,15 +414,15 @@ when(obj).notify();
 
 > Mockito Verify 方法用于检查是否发生了某些行为。我们可以在测试方法代码的末尾使用 Mockito 验证方法，以确保调用了指定的方法。
 
-1. **在模拟列表对象上仅调用一次add("Pankaj")**
+1. **在模拟列表对象上仅调用一次add("Pig")**
 
 ```java
 @Test
 void test() {
 	List<String> mockList = mock(List.class);
-	mockList.add("Pankaj");
+	mockList.add("Pig");
 	mockList.size();
-	verify(mockList).add("Pankaj");
+	verify(mockList).add("Pig");
 }
 ```
 
@@ -435,11 +435,11 @@ verify(mockList, times(1)).size();
 1. **验证调用次数**
 
 ```java
-verify(mockList, times(1)).size(); //same as normal verify method
-verify(mockList, atLeastOnce()).size(); // must be called at least once
-verify(mockList, atMost(2)).size(); // must be called at most 2 times
-verify(mockList, atLeast(1)).size(); // must be called at least once
-verify(mockList, never()).clear(); // must never be called
+verify(mockList, times(1)).size(); // 与常规验证方法相同
+verify(mockList, atLeastOnce()).size(); // 至少调用1次
+verify(mockList, atMost(2)).size(); // 最多调用2次
+verify(mockList, atLeast(1)).size(); // 至少调用1次
+verify(mockList, never()).clear(); // 永远不会被调用
 ```
 
 3. **verifyNoMoreInteractions()**
@@ -447,10 +447,10 @@ verify(mockList, never()).clear(); // must never be called
 在所有验证方法之后可以使用此方法，以确保所有交互都得到验证。如果模拟对象上存在任何未验证的交互，它将使测试失败。
 
 ```java
-// all interactions are verified, so below will pass
+// 所有交互都经过验证，因此下面调用将通过
 verifyNoMoreInteractions(mockList);
 mockList.isEmpty();
-// isEmpty() is not verified, so below will fail
+// isEmpty() 没有经过验证, 所以下面调用将失败
 verifyNoMoreInteractions(mockList);
 ```
 
