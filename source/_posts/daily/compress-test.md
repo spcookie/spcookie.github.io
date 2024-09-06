@@ -488,6 +488,8 @@ public class ProtocolCompressBenchmarkTest {
 
 ## 测试结果
 
+{% gallery %}
 ![测试结果](https://spcookie.oss-cn-hangzhou.aliyuncs.com/20240906100257-2024-09-06.png)
+{% endgallery %}
 
 **结论：使用Zstd压缩算法，压缩阈值选取8kB**
