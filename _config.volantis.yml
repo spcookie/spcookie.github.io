@@ -42,7 +42,7 @@ cdn_system:
     # Tip: 在本配置文件中 匹配以 "volantis-local" 开头的链接路径替换为该格式的前缀开头 prefix
     local:
       # CDN 链接前缀
-      prefix: https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io@1.2.7
+      prefix: https://cdn.jsdelivr.net/gh/spcookie/static.spcookie.github.io@1.2.8
       # local CDN 格式
       format: ${prefix}/${file}
     # npm
@@ -704,7 +704,7 @@ sidebar:
 tag_plugins:
   # {% note text %}
   note: # style for default note:
-    icon: '\f054'
+    icon: '/f054'
     color: ''
     iconfont: 'Font Awesome 6 Free'
   # {% checkbox %}
@@ -1166,7 +1166,7 @@ color_scheme:
     # 主题色块内部的文字颜色
     inner: '#fff'
     # 选中区域文字的背景颜色
-    selection: 'alpha(#FFE6E6, 0.2)'
+    selection: 'alpha(#FFE6E6, 0.4)'
   # ------------
   # 亮色主题（默认）
   light:
@@ -1264,7 +1264,7 @@ custom_css:
     zoom-in: volantis-static/media/cursor/zoom-in.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/zoom-in.png
     grab: volantis-static/media/cursor/openhand.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/openhand.png
   font_smoothing: true # font-smoothing for webkit
-  max_width: 1080px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
+  max_width: 1200px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
   scrollbar:
     size: 4px
     border: 2px
